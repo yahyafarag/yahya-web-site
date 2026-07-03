@@ -456,11 +456,9 @@
 
     <section id="about" class="fade-in-section">
         <h2 class="section-title">About Me</h2>
-        <div class="contact-box" style="text-align: left;">
-            <p style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8;">
-                I am a dedicated professional with a strong foundation in <strong>Electrical Power Distribution</strong> and <strong>Industrial Automation (PLC)</strong>. Beyond my technical engineering roots, I have a deep passion for continuous improvement, evidenced by my certifications in <strong>Project Management, Agile methodologies, and Six Sigma</strong>.
-                <br><br>
-                My goal is to integrate robust engineering systems with efficient management practices, leveraging cutting-edge technologies like <strong>Embedded Machine Learning</strong> to drive operational excellence.
+        <div class="contact-box" style="text-align: left; min-height: 160px; position: relative;">
+            <p id="dynamic-about" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; transition: opacity 0.5s ease-in-out;">
+                I am a passionate <strong>Industrial Automation Specialist</strong> with extensive experience in PLC programming, SCADA systems, and embedded machine learning. I thrive on optimizing manufacturing processes, integrating smart sensors, and upgrading legacy control systems to modern Industry 4.0 standards.
             </p>
         </div>
     </section>
@@ -2234,6 +2232,24 @@
 
         // Intersection Observer for scroll animations
         document.addEventListener("DOMContentLoaded", function() {
+            // Dynamic About Me
+            const aboutTexts = [
+                "I am a passionate <strong>Industrial Automation Specialist</strong> with extensive experience in PLC programming, SCADA systems, and embedded machine learning. I thrive on optimizing manufacturing processes, integrating smart sensors, and upgrading legacy control systems to modern Industry 4.0 standards.",
+                "As a certified <strong>Agile Project Manager</strong>, I excel at bridging the gap between technical engineering teams and business stakeholders. Armed with Six Sigma methodologies and Scrum frameworks, I lead cross-functional teams to deliver complex projects on time, within budget, and with zero defects.",
+                "With a strong foundation in <strong>Electrical Power Distribution</strong>, I specialize in designing and maintaining robust electrical systems. My expertise covers everything from MCC panel design to power generation, ensuring maximum reliability and safety in heavy industrial environments."
+            ];
+            let aboutIndex = 0;
+            const aboutEl = document.getElementById('dynamic-about');
+            if (aboutEl) {
+                setInterval(() => {
+                    aboutEl.style.opacity = 0;
+                    setTimeout(() => {
+                        aboutIndex = (aboutIndex + 1) % aboutTexts.length;
+                        aboutEl.innerHTML = aboutTexts[aboutIndex];
+                        aboutEl.style.opacity = 1;
+                    }, 500);
+                }, 8000);
+            }
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
