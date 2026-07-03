@@ -2174,21 +2174,21 @@
 
     <footer>
         <div class="footer-links">
-            <a href="https://linkedin.com/in/yahya-tarek" target="_blank" title="LinkedIn">💼</a>
-            <a href="https://wa.me/201099246336" target="_blank" title="WhatsApp">💬</a>
-            <a href="mailto:y_tarek91@yahoo.com" title="Email">📧</a>
-            <a href="CV.html" target="_blank" title="Download CV">📄</a>
+            <a href="https://linkedin.com/in/yahya-tarek" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">💼</a>
+            <a href="https://wa.me/201099246336" target="_blank" title="WhatsApp" aria-label="WhatsApp Chat">💬</a>
+            <a href="mailto:y_tarek91@yahoo.com" title="Email" aria-label="Send Email">📧</a>
+            <a href="CV.html" target="_blank" title="Download CV" aria-label="Download CV Document">📄</a>
         </div>
         <p>&copy; 2026 Yahya Tarek Farag. Crafted with passion & precision.</p>
     </footer>
 
     <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">↑</button>
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll back to top">↑</button>
 
     <!-- The Modal -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close-btn">&times;</span>
-        <img class="modal-content" id="img01" onclick="event.stopPropagation()">
+    <div id="imageModal" class="modal" onclick="closeModal()" aria-modal="true" role="dialog">
+        <span class="close-btn" role="button" aria-label="Close modal">&times;</span>
+        <img class="modal-content" id="img01" alt="Certificate Full View" onclick="event.stopPropagation()">
     </div>
 
     <script>
