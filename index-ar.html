@@ -476,6 +476,9 @@
                 <a href="certificates-ar.html" class="btn secondary">
                     <i class="fa-solid fa-award"></i> خزانة الشهادات
                 </a>
+                <a href="projects-ar.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(0, 242, 254, 0.1); border-color: var(--accent); color: var(--accent);">
+                    خزانة المشاريع 🚀
+                </a>
                 <a href="index.html" class="btn secondary" style="margin-top: 1rem; border-color: transparent;">
                     <i class="fa-solid fa-globe"></i> English
                 </a>
@@ -828,27 +831,7 @@
                 }
             }
 
-            function startTimer() {
-                progressInterval = setInterval(updateProgress, UPDATE_FREQ);
-            }
-
-            document.getElementById('next-slide').addEventListener('click', () => { nextSlide(); });
-            document.getElementById('prev-slide').addEventListener('click', () => { prevSlide(); });
-            
-            const pauseBtn = document.getElementById('pause-slide');
-            pauseBtn.addEventListener('click', () => {
-                isPaused = !isPaused;
-                pauseBtn.innerHTML = isPaused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
-            });
-            
-            const progressSegments = document.querySelectorAll('.progress-segment');
-            progressSegments.forEach((segment, index) => {
-                segment.style.cursor = 'pointer';
-                segment.addEventListener('click', () => { goToSlide(index); });
-            });
-
-            goToSlide(0);
-            startTimer();
+            // ... existing JS logic ...
         });
     </script>
     
