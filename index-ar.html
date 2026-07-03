@@ -49,6 +49,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        body { font-family: 'Tajawal', 'Inter', sans-serif; }
+        
     :root {
         --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         --glass-bg: rgba(255, 255, 255, 0.05);
@@ -63,15 +65,22 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Inter', 'Tajawal', sans-serif;
     }
     
     body {
-        background: var(--bg-gradient);
+        background: #0f172a; /* Fallback for particles */
         color: var(--text-main);
         min-height: 100vh;
         display: flex;
-        overflow: hidden; /* Prevent scrolling for dashboard feel */
+        overflow: hidden;
+    }
+    
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: var(--bg-gradient);
     }
     
     /* Layout */
@@ -79,31 +88,37 @@
         display: flex;
         width: 100%;
         height: 100vh;
+        z-index: 1; /* Above particles */
     }
     
     /* Sidebar */
     .profile-sidebar {
-        width: 300px;
-        background: rgba(15, 23, 42, 0.8);
+        width: 320px;
+        background: rgba(15, 23, 42, 0.75);
         backdrop-filter: blur(20px);
         border-right: 1px solid var(--glass-border);
-        padding: 2rem;
+        padding: 2.5rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 10;
         text-align: center;
+        box-shadow: 5px 0 25px rgba(0,0,0,0.3);
     }
     
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
         margin-bottom: 1.5rem;
         padding: 4px;
         background: linear-gradient(135deg, var(--accent), #8b5cf6);
-        box-shadow: 0 0 20px var(--accent-glow);
+        box-shadow: 0 0 25px var(--accent-glow);
+        transition: transform 0.3s ease;
+    }
+    .profile-photo:hover {
+        transform: scale(1.05);
     }
     
     .profile-photo img {
@@ -115,16 +130,19 @@
     }
     
     .profile-sidebar h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
+        font-size: 1.6rem;
+        font-weight: 800;
         margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
     }
     
     .profile-sidebar h2 {
         font-size: 1rem;
         color: var(--accent);
         margin-bottom: 2rem;
-        font-weight: 500;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
     .sidebar-actions {
@@ -135,7 +153,7 @@
     }
     
     .btn {
-        padding: 0.75rem 1rem;
+        padding: 0.85rem 1rem;
         border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
@@ -164,14 +182,14 @@
     }
     
     .btn.secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15);
     }
     
     /* Main Stage */
     .infographic-stage {
         flex: 1;
         position: relative;
-        padding: 2rem;
+        padding: 2rem 4rem;
         display: flex;
         flex-direction: column;
     }
@@ -179,28 +197,25 @@
     /* Progress Bars */
     .progress-container {
         display: flex;
-        gap: 10px;
+        gap: 12px;
         margin-bottom: 2rem;
     }
     
     .progress-segment {
         flex: 1;
         height: 6px;
-        background: var(--glass-bg);
-        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
         overflow: hidden;
+        cursor: pointer;
     }
     
     .progress-fill {
         height: 100%;
         width: 0%;
         background: var(--accent);
-        border-radius: 3px;
-        transition: width 0.1s linear;
-    }
-    
-    .progress-segment.active .progress-fill {
-        /* Animation handled by JS for precise control */
+        border-radius: 4px;
+        box-shadow: 0 0 10px var(--accent-glow);
     }
     
     .progress-segment.completed .progress-fill {
@@ -219,10 +234,10 @@
     .slide {
         position: absolute;
         width: 100%;
-        max-width: 1000px;
+        max-width: 1100px;
         opacity: 0;
         visibility: hidden;
-        transform: scale(0.95);
+        transform: translateY(20px) scale(0.98);
         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         flex-direction: column;
@@ -232,45 +247,46 @@
     .slide.active {
         opacity: 1;
         visibility: visible;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
     }
     
     .slide-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 800;
         background: linear-gradient(to right, #fff, #94a3b8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     /* Infographic Elements */
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.5rem;
+        /* Staggered animation classes */
     }
     
     .stat-card {
-        background: var(--glass-bg);
+        background: rgba(255, 255, 255, 0.03);
         border: 1px solid var(--glass-border);
         border-radius: 16px;
-        padding: 2rem;
+        padding: 2.5rem 1.5rem;
         text-align: center;
         backdrop-filter: blur(10px);
-        transition: transform 0.3s ease;
-    }
-    
-    .stat-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.2);
+        transform-style: preserve-3d; /* For vanilla-tilt */
     }
     
     .stat-card.highlight {
-        background: rgba(59, 130, 246, 0.1);
-        border-color: var(--accent);
-        box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+        background: rgba(59, 130, 246, 0.05);
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Inner 3D pop for tilt */
+    .stat-card > * {
+        transform: translateZ(30px);
     }
     
     .stat-number {
@@ -280,15 +296,17 @@
         color: #fff;
         margin-bottom: 0.5rem;
         line-height: 1;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     
     .stat-card.highlight .stat-number {
         color: var(--accent);
-        text-shadow: 0 0 20px var(--accent-glow);
+        text-shadow: 0 0 25px var(--accent-glow);
     }
     
     .stat-label {
-        font-size: 1.1rem;
+        display: block;
+        font-size: 1.15rem;
         color: var(--text-muted);
         font-weight: 500;
     }
@@ -302,44 +320,97 @@
         line-height: 1.6;
     }
     
+    /* Circular Chart */
+    .circular-chart-svg {
+        display: block;
+        margin: 0 auto 1rem auto;
+        max-width: 120px;
+        max-height: 120px;
+        filter: drop-shadow(0 0 10px var(--accent-glow));
+    }
+    .circle-bg {
+        fill: none;
+        stroke: rgba(255,255,255,0.1);
+        stroke-width: 3.8;
+    }
+    .circle {
+        fill: none;
+        stroke-width: 3.8;
+        stroke-linecap: round;
+        stroke: var(--accent);
+        animation: progress 2s ease-out forwards;
+    }
+    @keyframes progress {
+        0% { stroke-dasharray: 0 100; }
+    }
+    .percentage {
+        fill: #fff;
+        font-family: inherit;
+        font-size: 0.5em;
+        text-anchor: middle;
+        font-weight: bold;
+    }
+    
     /* Controls */
     .slide-controls {
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        gap: 1.5rem;
         margin-top: 2rem;
+        z-index: 20;
     }
     
     .control-btn {
-        background: var(--glass-bg);
+        background: rgba(255, 255, 255, 0.05);
         border: 1px solid var(--glass-border);
         color: var(--text-main);
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         font-size: 1.2rem;
+        backdrop-filter: blur(10px);
     }
     
     .control-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--accent);
+        border-color: var(--accent);
+        box-shadow: 0 0 20px var(--accent-glow);
         transform: scale(1.1);
     }
     
-    /* RTL Support */
+    /* RTL Specific Overrides for Arabic */
     html[dir="rtl"] .profile-sidebar {
         border-right: none;
         border-left: 1px solid var(--glass-border);
+        box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+    }
+    
+    html[dir="rtl"] .stat-card {
+        text-align: right;
+    }
+    
+    html[dir="rtl"] .stat-card.center-override {
+        text-align: center;
+    }
+    
+    html[dir="rtl"] .slide-desc {
+        text-align: right;
+    }
+    
+    html[dir="rtl"] .stat-number, 
+    html[dir="rtl"] .slide-title {
+        text-align: center;
     }
     
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         body {
-            overflow: auto; /* Allow body scroll on mobile */
+            overflow: auto; /* Enable mobile scroll */
         }
         .dashboard-container {
             flex-direction: column;
@@ -348,32 +419,30 @@
         }
         .profile-sidebar {
             width: 100%;
-            border-right: none;
+            border-left: none !important;
+            border-right: none !important;
             border-bottom: 1px solid var(--glass-border);
-            padding: 1.5rem;
-            position: relative; /* Remove fixed height constraint */
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
         }
         .infographic-stage {
-            min-height: 800px;
+            min-height: 900px;
+            padding: 2rem 1.5rem;
             overflow-y: visible;
         }
         .slide-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
         .stat-number {
-            font-size: 2.5rem;
-        }
-        .stat-card {
-            padding: 1.5rem;
-        }
-        html[dir="rtl"] .profile-sidebar {
-            border-left: none;
-            border-bottom: 1px solid var(--glass-border);
+            font-size: 2.8rem;
         }
     }
+    
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="dashboard-container">
         <!-- Sidebar -->
         <aside class="profile-sidebar">
@@ -418,24 +487,30 @@
         <div class="slide" id="slide-0">
             <h2 class="slide-title">الملف التنفيذي</h2>
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
                     <span class="stat-number">138</span>
                     <span class="stat-label">مهندساً وفنياً في الفريق</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
                     <span class="stat-number">200+</span>
                     <span class="stat-label">موقع على مستوى الجمهورية</span>
                 </div>
-                <div class="stat-card highlight">
-                    <span class="stat-number">5 مليون</span>
-                    <span class="stat-label">توفير شهري في الميزانية (ج.م)</span>
+                <div class="stat-card highlight center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05">
+                    <div class="circular-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart-svg">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="33, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">33%</text>
+                        </svg>
+                    </div>
+                    <span class="stat-label" style="text-align: center; display: block;">توفير 5 مليون جنيه شهرياً</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
                     <span class="stat-number">50+</span>
                     <span class="stat-label">فرع جديد تم بناؤه</span>
                 </div>
             </div>
-            <p class="slide-desc">مدير تنفيذي متخصص في إدارة العمليات متعددة المواقع، وتصميم أنظمة CMMS، وإنشاءات قطاع الأغذية والمشروبات.</p>
+            <p class="slide-desc" style="text-align: center;">مدير تنفيذي متخصص في إدارة العمليات متعددة المواقع، وتصميم أنظمة CMMS، وإنشاءات قطاع الأغذية والمشروبات الكبرى.</p>
         </div>
         
         <!-- Slide 2: B.Laban -->
@@ -443,15 +518,15 @@
             <h2 class="slide-title" style="color: var(--accent);">مدير عام الإدارة الهندسية</h2>
             <h3 style="text-align: center; color: #fff; margin-top: -1rem; margin-bottom: 2rem; font-size: 1.5rem;">شركة بـ لبن (2023 - حتى الآن)</h3>
             <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="stat-card highlight">
-                    <span class="stat-number" style="font-size: 3rem;">33%</span>
-                    <span class="stat-label">تخفيض الميزانية التشغيلية</span>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">عبر تطبيق نظام صيانة مخصص CMMS لـ 200 موقع.</p>
+                <div class="stat-card highlight center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05">
+                    <span class="stat-number" style="font-size: 4rem;">CMMS</span>
+                    <span class="stat-label" style="font-size: 1.3rem;">نظام صيانة رقمي متكامل</span>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem; text-align: right;">تصميم وتطبيق نظام صيانة مخصص لـ 200 موقع من الصفر، مما أدى لتخفيض الميزانية التشغيلية بنسبة 33%.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number" style="font-size: 3rem;">3</span>
-                    <span class="stat-label">مصانع إنتاج كبرى</span>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">بناء مصنعي الكوكيز والشيكولاتة من الصفر وتحديث مصنع الألبان.</p>
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <span class="stat-number" style="font-size: 4rem;">3</span>
+                    <span class="stat-label" style="font-size: 1.3rem;">مصانع إنتاج كبرى</span>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem; text-align: right;">بناء مصنعي الكوكيز والشيكولاتة (Greenfield) وإعادة هيكلة وتطوير مصنع الألبان بالكامل.</p>
                 </div>
             </div>
         </div>
@@ -461,15 +536,15 @@
             <h2 class="slide-title" style="color: var(--accent);">مدير الإدارة الكهربائية</h2>
             <h3 style="text-align: center; color: #fff; margin-top: -1rem; margin-bottom: 2rem; font-size: 1.5rem;">شركة العبد للأغذية (2015 - 2023)</h3>
             <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="stat-card">
-                    <i class="fa-solid fa-microchip" style="font-size: 2rem; margin-bottom: 1rem; color: #fff;"></i>
-                    <span class="stat-label">رائد في الأتمتة الصناعية</span>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">تصميم وتشغيل أنظمة PLC/SCADA لخطوط الحلويات ونقلها من التشغيل اليدوي للآلي.</p>
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <i class="fa-solid fa-microchip" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.5);"></i>
+                    <span class="stat-label" style="color: #fff; font-size: 1.2rem;">رائد في الأتمتة الصناعية</span>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem; text-align: right;">تصميم وتشغيل أنظمة PLC/SCADA لخطوط الحلويات ونقلها من التشغيل اليدوي للآلي بشكل كامل.</p>
                 </div>
-                <div class="stat-card highlight">
-                    <i class="fa-solid fa-building" style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent);"></i>
-                    <span class="stat-label">ممثل المالك للمشاريع</span>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">المسؤول التقني المباشر لبناء الفروع الجديدة، التفاوض، والإشراف التنفيذي.</p>
+                <div class="stat-card highlight center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05">
+                    <i class="fa-solid fa-hard-hat" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); text-shadow: 0 0 15px var(--accent-glow);"></i>
+                    <span class="stat-label" style="color: #fff; font-size: 1.2rem;">ممثل المالك للمشاريع</span>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem; text-align: right;">المسؤول التقني المباشر لبناء الفروع الجديدة، التفاوض مع المقاولين، والإشراف التنفيذي.</p>
                 </div>
             </div>
         </div>
@@ -478,15 +553,17 @@
         <div class="slide" id="slide-3">
             <h2 class="slide-title">بدايات المسيرة المهنية</h2>
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
                     <span class="stat-number" style="font-size: 2rem;">عصائر فراجيلو</span>
-                    <span class="stat-label">مهندس صيانة كهربائية (2014-2015)</span>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">إدارة التركيبات الكهربائية في بيئة إنتاج ضخمة.</p>
+                    <span class="stat-label" style="color: var(--accent); margin-top: 0.5rem;">مهندس صيانة كهربائية</span>
+                    <span class="stat-label" style="font-size: 0.9rem; margin-top: 0.2rem;">2014-2015</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">إدارة التركيبات الكهربائية في بيئة إنتاج ضخمة للحفاظ على استمرارية العمل.</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
                     <span class="stat-number" style="font-size: 2rem;">فالكون للطاقة</span>
-                    <span class="stat-label">مهندس مكتب فني (2013-2014)</span>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">تصميم ومراجعة المخططات الهندسية وتقدير التكاليف.</p>
+                    <span class="stat-label" style="color: var(--accent); margin-top: 0.5rem;">مهندس مكتب فني</span>
+                    <span class="stat-label" style="font-size: 0.9rem; margin-top: 0.2rem;">2013-2014</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">تصميم ومراجعة المخططات الهندسية وتقدير تكاليف المشاريع الإنشائية.</p>
                 </div>
             </div>
         </div>
@@ -495,23 +572,23 @@
         <div class="slide" id="slide-4">
             <h2 class="slide-title">التعليم والشهادات</h2>
             <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fa-solid fa-graduation-cap" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;"></i>
                     <span class="stat-number" style="font-size: 2rem;">جيد جداً</span>
                     <span class="stat-label">بكالوريوس الهندسة الكهربائية</span>
                 </div>
-                <div class="stat-card highlight">
-                    <i class="fa-solid fa-certificate" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <div class="stat-card highlight center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05">
+                    <i class="fa-solid fa-certificate" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; text-shadow: 0 0 15px var(--accent-glow);"></i>
                     <span class="stat-number" style="font-size: 2.5rem;">50+</span>
                     <span class="stat-label">شهادة مهنية معتمدة</span>
                 </div>
-                <div class="stat-card">
-                    <i class="fa-brands fa-google" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <i class="fa-brands fa-google" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;"></i>
                     <span class="stat-number" style="font-size: 2rem;">PMP</span>
-                    <span class="stat-label">إدارة المشاريع من جوجل (أجايل)</span>
+                    <span class="stat-label">إدارة المشاريع من جوجل</span>
                 </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-medal" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="stat-card center-override" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <i class="fa-solid fa-medal" style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;"></i>
                     <span class="stat-number" style="font-size: 2rem;">الحزام الأخضر</span>
                     <span class="stat-label">Lean Six Sigma</span>
                 </div>
@@ -528,18 +605,47 @@
         </main>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Particles
+            if(typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                  "particles": {
+                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#3b82f6" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.2, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                  },
+                  "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                      "onhover": { "enable": true, "mode": "grab" },
+                      "onclick": { "enable": true, "mode": "push" },
+                      "resize": true
+                    },
+                    "modes": {
+                      "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }
+                    }
+                  },
+                  "retina_detect": true
+                });
+            }
+
+            // Slide Logic
             const slides = document.querySelectorAll('.slide');
             const progressFills = document.querySelectorAll('.progress-fill');
             const totalSlides = slides.length;
             let currentSlide = 0;
             let isPaused = false;
-            let slideInterval;
             let progressInterval;
             let currentProgress = 0;
-            const DURATION = 5000; // 5 seconds per slide
-            const UPDATE_FREQ = 50; // Update progress every 50ms
+            const DURATION = 6000; // Increased to 6s to allow reading
+            const UPDATE_FREQ = 50; 
             
             function resetProgress() {
                 progressFills.forEach(fill => {
@@ -554,7 +660,16 @@
             }
 
             function goToSlide(index) {
-                slides.forEach(s => s.classList.remove('active'));
+                slides.forEach(s => {
+                    s.classList.remove('active');
+                    // Reset SVG animation by re-triggering it
+                    const svgs = s.querySelectorAll('.circle');
+                    svgs.forEach(svg => {
+                        svg.style.animation = 'none';
+                        svg.offsetHeight; /* trigger reflow */
+                        svg.style.animation = null; 
+                    });
+                });
                 slides[index].classList.add('active');
                 currentSlide = index;
                 resetProgress();
@@ -603,7 +718,6 @@
                 pauseBtn.innerHTML = isPaused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
             });
             
-            // Allow manual click on progress bars to jump to slide
             const progressSegments = document.querySelectorAll('.progress-segment');
             progressSegments.forEach((segment, index) => {
                 segment.style.cursor = 'pointer';
