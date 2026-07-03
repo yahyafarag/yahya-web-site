@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="الموقع الشخصي ليحيى طارق فرج - مهندس كهرباء، أخصائي أتمتة صناعية، ومدير مشاريع أجايل.">
-    <meta property="og:title" content="يحيى طارق فرج | السيرة الذاتية">
-    <meta property="og:description" content="اكتشف شهاداتي المعتمدة، خلفيتي المهنية، وخبرتي في الهندسة الكهربائية وإدارة المشاريع.">
+    <meta name="description" content="Portfolio of Yahya Tarek Farag - Engineering Executive, Automation & PLC Specialist, and Agile Project Manager.">
+    <meta property="og:title" content="يحيى طارق فرج | السيرة الذاتية التنفيذية">
+    <meta property="og:description" content="اكتشف خبرتي المهنية، تعليمي، وشهاداتي المعتمدة في الهندسة الكهربائية وإدارة المشاريع.">
     <meta property="og:image" content="https://yahyafarag.github.io/my-certificates/Photos-001/photo%20of%20me/2016-12-28-10-14-39-376.jpg">
     <meta property="og:url" content="https://yahyafarag.github.io/my-certificates/">
     <meta property="og:type" content="website">
@@ -14,10 +14,10 @@
     <link rel="canonical" href="https://yahyafarag.github.io/my-certificates/index-ar.html">
     <link rel="alternate" hreflang="en" href="https://yahyafarag.github.io/my-certificates/index.html">
     <link rel="alternate" hreflang="ar" href="https://yahyafarag.github.io/my-certificates/index-ar.html">
-    <meta name="keywords" content="Electrical Engineer, Automation, PLC Specialist, Agile Project Manager, Yahya Tarek Farag, SCADA, Six Sigma, PMP">
+    <meta name="keywords" content="Electrical Engineer, Automation, PLC Specialist, Agile Project Manager, Yahya Tarek Farag, SCADA, Six Sigma, PMP, General Manager">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="يحيى طارق فرج | السيرة الذاتية">
-    <meta name="twitter:description" content="اكتشف شهاداتي المعتمدة، خلفيتي المهنية، وخبرتي في الهندسة الكهربائية وإدارة المشاريع.">
+    <meta name="twitter:title" content="يحيى طارق فرج | السيرة الذاتية التنفيذية">
+    <meta name="twitter:description" content="اكتشف خبرتي المهنية، تعليمي، وشهاداتي المعتمدة في الهندسة الكهربائية وإدارة المشاريع.">
     <meta name="twitter:image" content="https://yahyafarag.github.io/my-certificates/Photos-001/photo%20of%20me/2016-12-28-10-14-39-376.jpg">
     <script type="application/ld+json">
     {
@@ -26,15 +26,26 @@
       "mainEntity": {
         "@type": "Person",
         "name": "Yahya Tarek Farag",
-        "jobTitle": "Electrical Engineer & Agile Project Manager",
+        "jobTitle": "مدير عام الهندسة",
         "url": "https://yahyafarag.github.io/my-certificates/",
         "image": "https://yahyafarag.github.io/my-certificates/Photos-001/photo%20of%20me/2016-12-28-10-14-39-376.jpg",
-        "knowsAbout": [
+        "worksFor": {
+            "@type": "Organization",
+            "name": "B.Laban Engineering"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Alexandria University",
+            "department": "Faculty of Engineering"
+        },
+        "knowsنبذة عني": [
+          "Engineering Executive",
           "الهندسة الكهربائية",
           "الأتمتة الصناعية",
           "PLC",
           "Agile إدارة المشاريع",
-          "التميز التشغيلي"
+          "التميز التشغيلي",
+          "CMMS Deployment"
         ]
       }
     }
@@ -51,358 +62,219 @@
             --text-muted: #94a3b8;
             --accent: #3b82f6;
             --accent-glow: rgba(59, 130, 246, 0.5);
-            --card-color: #3b82f6;
-            --font-main: 'Inter', sans-serif;
-            --font-heading: 'Outfit', sans-serif;
+            --card-border: rgba(255, 255, 255, 0.1);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: var(--font-main);
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
-
-        /* Particle Stars Background */
         .particles {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1; overflow: hidden;
         }
         .particles span {
-            position: absolute; display: block; width: 3px; height: 3px; background: rgba(255,255,255,0.3); border-radius: 50%;
-            animation: drift linear infinite;
-        }
-        @keyframes drift {
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
-        }
-
-        /* Navbar */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo { font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; color: #fff; text-decoration:none; }
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--text-main); }
-        .menu-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; background: none; border: none; }
-
-        .lang-toggle { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
-        .lang-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-        /* Hero Section */
-        .hero { 
-            min-height: 100vh;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            text-align: center; padding: 120px 20px 80px; position: relative; z-index: 1;
-            background: radial-gradient(circle at 50% 30%, rgba(59,130,246,0.12) 0%, transparent 50%);
-        }
-        .profile-wrapper {
-            position: relative;
-            width: 200px; height: 200px; border-radius: 50%; padding: 6px;
-            background: linear-gradient(135deg, var(--accent) 0%, #10b981 100%);
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(14,165,233,0.4);
-            animation: float 6s ease-in-out infinite;
+            position: absolute; display: block; border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float linear infinite;
         }
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); box-shadow: 0 0 40px rgba(14,165,233,0.6); }
-            100% { transform: translateY(0px); }
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg-dark); }
-
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 1s ease;
-        }
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease;
-        }
-        .hero-btns { animation: fadeInUp 1.4s ease; display:flex; gap: 20px; justify-content:center; }
-        .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px var(--accent-glow);
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--accent-glow); }
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
-
-        /* Marquee */
-        .marquee-wrapper {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-        }
-        .marquee-wrapper::before, .marquee-wrapper::after {
-            content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2;
-        }
-        .marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-dark), transparent); }
-        .marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-dark), transparent); }
         
-        .marquee-content {
-            display: inline-block;
-            animation: scroll 30s linear infinite;
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px); z-index: 1000; display: flex;
+            justify-content: space-between; align-items: center; padding: 20px 5%;
+            border-bottom: 1px solid var(--card-border);
         }
-        .marquee-content img {
-            height: 60px;
-            margin: 0 30px;
-            vertical-align: middle;
-            filter: grayscale(100%) invert(1) brightness(1.5);
-            mix-blend-mode: screen;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-            object-fit: contain;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .marquee-content img:hover { 
-            filter: none; 
-            mix-blend-mode: normal;
-            opacity: 1; 
-            background: rgba(255,255,255,0.9);
-            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Sections */
-        section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            color: #fff;
-        }
-
-        /* About & Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .skill-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
-        }
-        .skill-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.1); }
-        .skill-card h3 { color: #fff; margin-bottom: 10px; font-family: var(--font-heading); }
-        .skill-card p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* Timeline CSS Fixes */
-        .timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 20px 0; }
-        .timeline::before { left: 40px; background: rgba(255,255,255,0.1); content: ''; position: absolute; top: 0; bottom: 0; width: 4px; border-radius: 4px; }
-        .timeline-item { padding-left: 90px; margin-bottom: 40px; position:relative; }
-        .timeline-marker {
-            position: absolute; left: 31px; top: 20px;
-            width: 22px; height: 22px; border-radius: 50%;
-            background: var(--card-color); border: 4px solid var(--bg-dark); z-index: 1;
-            box-shadow: 0 0 15px var(--card-color);
-        }
-        .timeline-content {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-top: 4px solid var(--card-color);
-            border-radius: 16px; padding: 25px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
-        }
-        .timeline-content:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .timeline-content::before {
-            content: ''; position: absolute; top: 22px; left: -10px;
-            border-width: 10px 10px 10px 0;
-            border-style: solid;
-            border-color: transparent var(--bg-card) transparent transparent;
-        }
-        .date { background: rgba(255,255,255,0.1); color: #e2e8f0; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
-        .category-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; border: 1px solid; font-weight: 700; }
-        .title { color: #fff; font-size: 1.4rem; margin-bottom: 10px; line-height: 1.4; }
-        .provider { color: var(--text-muted); display: flex; align-items: center; gap: 8px; font-weight: 500; margin-bottom: 15px; }
-        .provider-icon { width: 20px; height: 20px; object-fit: contain; filter: brightness(1.2); }
-        .course-details { background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 8px; display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
-        .detail-item { font-size: 0.9rem; color: #cbd5e1; }
+        .logo { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--accent); }
+        .lang-toggle { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; }
+        .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
         
-        .cert-preview { background: rgba(0,0,0,0.3); border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px; cursor: pointer; }
-        .cert-image { width: 100%; max-height: 350px; object-fit: contain; }
-        
-        .css-certificate {
-            width: 100%; min-height: 220px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, rgba(59,130,246,0.15) 100%);
-            border: 2px solid rgba(255,255,255,0.1);
-            position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 30px 20px; text-align: center; overflow: hidden;
-            box-shadow: inset 0 0 60px rgba(59,130,246,0.05);
-        }
-        .css-certificate::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(59,130,246,0.1), transparent 30%);
-            animation: rotateBorder 8s linear infinite;
-        }
-        @keyframes rotateBorder { 100% { transform: rotate(360deg); } }
-        .css-cert-logo { width: 50px; height: 50px; object-fit: contain; margin-bottom: 12px; filter: drop-shadow(0 0 8px rgba(59,130,246,0.4)); z-index: 2; }
-        .css-cert-ribbon {
-            position: absolute; top: 12px; right: -35px;
-            background: linear-gradient(135deg, var(--card-color), #10b981); color: white; font-size: 0.6rem; font-weight: bold; padding: 5px 40px; transform: rotate(45deg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: 1px;
-        }
-        .css-cert-title { color: #fff; font-size: 1.1rem; font-weight: 800; font-family: var(--font-heading); margin-bottom: 8px; z-index: 2; line-height: 1.3; }
-        .css-cert-subtitle { color: #64748b; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; z-index: 2; }
-        .css-cert-instructor { color: #94a3b8; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; width: 80%; z-index: 2; }
-
-        /* Stats Counter */
-        .stats-section { padding: 60px 20px; background: rgba(0,0,0,0.3); position: relative; z-index: 1; }
-        .stats-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
-        .stat-item { text-align: center; }
-        .stat-number { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .stat-label { color: var(--text-muted); font-size: 0.95rem; margin-top: 5px; }
-
-        /* Filter Buttons */
-        .filter-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
-        .filter-btn { padding: 8px 20px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #e2e8f0; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; font-family: var(--font-main); }
-        .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 15px var(--accent-glow); }
-
-        /* Back to Top */
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 1.5rem; z-index: 99; opacity: 0; transform: translateY(20px); transition: all 0.3s; box-shadow: 0 4px 15px var(--accent-glow); display: flex; align-items: center; justify-content: center; }
-        .back-to-top.visible { opacity: 1; transform: translateY(0); }
-        .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--accent-glow); }
-
-        .id-badge { background: rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; border: 1px dashed rgba(255,255,255,0.2); }
-        .cert-link { background: var(--card-color); color: white; padding: 6px 15px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: filter 0.3s; display: inline-flex; align-items: center; gap: 5px; }
-        .cert-link:hover { filter: brightness(1.2); }
-        .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
-        .header-left { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-        .tags-container { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-
-        /* Contact Section */
-        .contact-box { background: var(--bg-card); padding: 40px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-        .contact-box h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #fff; }
-        .contact-box p { color: var(--text-muted); margin-bottom: 30px; }
-        
-        footer { text-align: center; padding: 50px 20px 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; background: rgba(0,0,0,0.2); }
-        .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; flex-wrap: wrap; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 1.2rem; transition: color 0.3s, transform 0.3s; display: inline-block; }
-        .footer-links a:hover { color: var(--accent); transform: translateY(-3px); }
-
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
-        .modal-content { max-width: 95%; max-height: 95vh; border-radius: 8px; border: 2px solid rgba(255,255,255,0.1); animation: zoom 0.3s; object-fit: contain; }
-        @keyframes zoom { from {transform:scale(0.9); opacity:0;} to {transform:scale(1); opacity:1;} }
-        .close-btn { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; z-index: 1001; }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Fade in scroll animation classes */
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, visibility; }
-        .fade-in-section.is-visible { opacity: 1; transform: none; }
-
-        @media (max-width: 768px) {
-            .masonry-gallery { column-count: 2; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .hero-btns { flex-direction: column; width: 100%; max-width: 300px; gap: 15px; }
-            .btn { text-align: center; width: 100%; }
-            .timeline::before { left: 20px; }
-            .timeline-marker { left: 11px; }
-            .timeline-item { padding-left: 50px; }
-            .nav-links { 
-                display: none; 
-                position: absolute; top: 60px; left: 0; width: 100%; 
-                background: var(--bg-dark); flex-direction: column; 
-                padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); 
+        @media(max-width: 768px) {
+            .nav-links {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+                flex-direction: column; text-align: center; padding: 20px 0;
+                display: none; border-bottom: 1px solid var(--card-border);
             }
             .nav-links.active { display: flex; }
-            .nav-links a { margin: 15px 0; font-size: 1.1rem; }
             .menu-toggle { display: block; }
-            section { padding: 60px 15px; }
-            .section-title { font-size: 2rem; margin-bottom: 30px; }
-            .contact-box { padding: 25px 15px; }
-            .css-certificate { min-height: 180px; padding: 15px; }
-            .stats-grid { gap: 30px; }
-            .stat-number { font-size: 2.2rem; }
         }
-        @media (max-width: 480px) {
-            .masonry-gallery { column-count: 1; }
-            .timeline-header { flex-direction: column; align-items: flex-start; }
-            .header-left { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .title { font-size: 1.2rem; }
-            .css-cert-title { font-size: 1rem; }
-            .tags-container { margin-top: 10px; }
+
+        .hero {
+            padding: 150px 20px 80px; text-align: center; max-width: 900px; margin: 0 auto;
         }
-        @media print {
-            body { background: white; color: black; }
-            .particles, .back-to-top, .hero-btns, nav, .filter-bar { display: none !important; }
-            .fade-in-section { opacity: 1 !important; transform: none !important; }
-            .timeline-item { content-visibility: visible !important; break-inside: avoid; margin-bottom: 20px; }
-            .css-certificate { background: #f8fafc; border: 1px solid #cbd5e1; box-shadow: none; color: black; }
-            .css-cert-title { color: black; }
-            .css-cert-subtitle, .css-cert-instructor { color: #475569; border-color: #cbd5e1; }
-            .cert-link { background: transparent; border: 1px solid #cbd5e1; color: black; }
-            a { text-decoration: none; color: #1e40af; }
+        .profile-wrapper {
+            position: relative; width: 180px; height: 180px; margin: 0 auto 30px;
+            border-radius: 50%; padding: 5px; background: linear-gradient(45deg, var(--accent), #8b5cf6);
+            box-shadow: 0 0 30px var(--accent-glow);
         }
+        .profile-img {
+            width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--bg-dark);
+        }
+        .hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.8; }
+        
+        .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 12px 30px; border-radius: 30px; font-weight: 600; text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: var(--accent); color: white;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--accent-glow); }
+        .btn-secondary {
+            background: transparent; color: var(--text-main);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover { border-color: var(--accent); background: rgba(59, 130, 246, 0.1); }
+
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 2.5rem; text-align: center;
+            margin-bottom: 50px; color: var(--text-main);
+        }
+
+        .stats-section { background: rgba(0,0,0,0.2); padding: 60px 20px; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; gap: 30px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--accent); line-height: 1; }
+        .stat-label { font-size: 1.1rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .skills-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+        .skill-card {
+            background: var(--bg-card); border: 1px solid var(--card-border);
+            border-radius: 20px; padding: 30px; backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px); border-color: var(--accent);
+        }
+        .skill-card h3 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .skill-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .contact-box {
+            background: var(--bg-card); border: 1px solid var(--card-border);
+            border-radius: 20px; padding: 50px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .contact-box h3 { font-size: 2rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif; }
+
+        footer {
+            text-align: center; padding: 40px 20px; border-top: 1px solid var(--card-border);
+            background: rgba(0,0,0,0.3); margin-top: 50px;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .footer-links a { color: var(--text-main); font-size: 1.5rem; text-decoration: none; transition: transform 0.3s ease; }
+        .footer-links a:hover { transform: scale(1.2); color: var(--accent); }
+
+        /* Animations */
+        .fade-in-section {
+            opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        
+        .marquee-wrapper { overflow: hidden; white-space: nowrap; width: 100%; }
+        .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
+        .marquee-content img { height: 50px; margin: 0 40px; vertical-align: middle; filter: grayscale(100%) brightness(200%); opacity: 0.6; transition: 0.3s ease; }
+        .marquee-content img:hover { filter: none; opacity: 1; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white;
+            width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 1.5rem;
+            cursor: pointer; opacity: 0; pointer-events: none; transition: 0.3s ease; z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { background: #2563eb; transform: translateY(-3px); }
+
+        /* Certificate Timeline Styles */
+        .timeline {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;
+        }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px;
+            overflow: hidden; backdrop-filter: blur(10px); transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.2); }
+        .card-content { padding: 25px; flex-grow: 1; }
+        .date-badge {
+            display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 12px;
+            border-radius: 20px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;
+        }
+        .title { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; line-height: 1.4; }
+        .provider { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .provider-icon { width: 24px; height: 24px; border-radius: 4px; }
+        .details { display: flex; gap: 15px; margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: #cbd5e1; }
+        .cert-preview {
+            height: 200px; width: 100%; overflow: hidden; position: relative;
+            border-bottom: 1px solid var(--card-border); background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+        }
+        .cert-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer; }
+        .card:hover .cert-image { transform: scale(1.05); }
+        
+        .css-certificate { width: 100%; height: 100%; background: linear-gradient(135deg, #1e293b, #0f172a); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; border: 4px solid rgba(255,255,255,0.05); padding: 20px; text-align: center; }
+        .css-cert-logo { width: 60px; height: 60px; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); }
+        .css-cert-ribbon { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: #f8fafc; letter-spacing: 2px; }
+        .css-cert-subtitle { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; text-transform: uppercase; }
+
+        .filter-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+        .filter-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: var(--text-main);
+            padding: 8px 20px; border-radius: 30px; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); }
+
+        /* Modal Styles */
+        .modal {
+            display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0;
+            width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);
+            justify-content: center; align-items: center; backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            margin: auto; display: block; max-width: 90%; max-height: 90vh; border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8); animation: zoom 0.3s ease;
+        }
+        @keyframes zoom { from {transform:scale(0.9); opacity:0;} to {transform:scale(1); opacity:1;} }
+        .close-btn {
+            position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px;
+            font-weight: bold; transition: 0.3s; cursor: pointer; z-index: 2001;
+        }
+        .close-btn:hover, .close-btn:focus { color: var(--accent); text-decoration: none; cursor: pointer; }
         .timeline-item { content-visibility: auto; contain-intrinsic-size: 0 200px; }
     </style>
 </head>
 <body>
-
     <!-- Particle Background -->
     <div class="particles" id="particles"></div>
 
     <nav>
-        <a href="#" class="logo">ي. فرج</a>
+        <a href="index.html" class="logo">Y. Farag</a>
         <button class="menu-toggle" id="mobile-menu-btn">☰</button>
         <div class="nav-links" id="nav-links">
-            <a href="#about">نبذة</a>
+            <a href="#about">نبذة عني</a>
+            <a href="#experience">الخبرة</a>
+            <a href="#education">التعليم</a>
             <a href="#skills">المهارات</a>
-            <a href="#brands">الخبرات</a>
-            <a href="#certificates">الشهادات</a>
+            <a href="certificates.html">الشهادات</a>
             <a href="#contact">تواصل معي</a>
             <a href="index.html" class="lang-toggle">🌐 English</a>
         </div>
@@ -410,13 +282,13 @@
 
     <header class="hero">
         <div class="profile-wrapper">
-            <img src="Photos-001/photo of me/2016-12-28-10-14-39-376.jpg" alt="Yahya Tarek Farag" class="profile-img" fetchpriority="high">
+            <img src="{profile_photo_path}" alt="Yahya Tarek Farag" class="profile-img" fetchpriority="high">
         </div>
         <h1>Yahya Tarek Farag</h1>
-        <p>مهندس كهرباء | أخصائي أتمتة صناعية و PLC | مدير مشاريع أجايل<br>أعمل على سد الفجوة بين الأتمتة الصناعية والهندسة الإدارية الحديثة.</p>
+        <p>مدير تنفيذي هندسي | مدير عام الهندسة | أخصائي أتمتة<br>أعمل على سد الفجوة بين الأتمتة الصناعية والهندسة الإدارية الحديثة.</p>
         <div class="hero-btns">
-            <a href="CV.html" target="_blank" class="btn btn-primary">📄 تحميل السيرة الذاتية</a>
-            <a href="#certificates" class="btn btn-secondary">سجل الشهادات</a>
+            <a href="CV.html" target="_blank" class="btn btn-primary">📄 تنزيل السيرة الذاتية</a>
+            <a href="certificates.html" class="btn btn-secondary">View 55+ الشهادات</a>
         </div>
     </header>
 
@@ -424,12 +296,12 @@
     <section class="stats-section fade-in-section">
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-number" data-target="{num_certs}">0</div>
                 <div class="stat-label">شهادات معتمدة</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" data-target="13">0</div>
-                <div class="stat-label">سنوات خبرة</div>
+                <div class="stat-label">Years الخبرة</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" data-target="6">0</div>
@@ -442,20 +314,10 @@
         </div>
     </section>
 
-    
-        <section id="brands" class="fade-in-section" style="padding: 40px 0; background: rgba(0,0,0,0.2); max-width: 100%;">
-            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 30px;">خبرات مهنية وشركات عملت معها</h2>
-            <div class="marquee-wrapper">
-                <div class="marquee-content">
-                    <img src="company logo/images (1).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (2).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (3).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (4).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (5).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.png" alt="Company Logo" loading="lazy"><img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy"><img src="Elabdfoods.png" alt="Company Logo" loading="lazy"><img src="falcon.png" alt="Company Logo" loading="lazy"><img src="Farag Allah.png" alt="Company Logo" loading="lazy">
-                    <img src="company logo/images (1).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (2).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (3).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (4).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (5).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.png" alt="Company Logo" loading="lazy"><img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy"><img src="Elabdfoods.png" alt="Company Logo" loading="lazy"><img src="falcon.png" alt="Company Logo" loading="lazy"><img src="Farag Allah.png" alt="Company Logo" loading="lazy">
-                </div>
-            </div>
-        </section>
-        
+    {marquee_html}
 
     <section id="about" class="fade-in-section">
-        <h2 class="section-title">نبذة عني</h2>
+        <h2 class="section-title">نبذة عني Me</h2>
         <div class="contact-box" style="text-align: left; min-height: 160px; position: relative;">
             <p id="dynamic-about" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; transition: opacity 0.5s ease-in-out;">
                 أنا <strong>أخصائي أتمتة صناعية</strong> شغوف بخبرة واسعة في برمجة أنظمة الـ PLC، أنظمة SCADA، والتعلم الآلي المدمج. أعمل على تحسين عمليات التصنيع، دمج المستشعرات الذكية، وترقية أنظمة التحكم القديمة إلى معايير الصناعة 4.0 الحديثة.
@@ -463,10 +325,70 @@
         </div>
     </section>
 
-
+    
+    <section id="experience" class="fade-in-section">
+        <h2 class="section-title">Professional الخبرة</h2>
+        <div class="timeline" style="margin-top: 40px; padding: 0 20px;">
+            <!-- Job 1 -->
+            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
+                <div class="card" style="padding: 30px; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
+                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">مدير عام الهندسة</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">يوليو 2023 - الحاضر</span>
+                    </div>
+                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">هندسة ب.لبن، القاهرة، مصر</h4>
+                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
+                        <li style="margin-bottom: 10px;">تخفيض ميزانية التشغيل والصيانة الهندسية الشهرية للمجموعة بأكثر من الثلث من خلال إعادة تصميم العمليات الشاملة وتوحيد الموردين بشكل استراتيجي.</li>
+                        <li style="margin-bottom: 10px;">تصميم ونشر نظام CMMS مخصص بالكامل من الصفر لتنظيم عمليات الصيانة على مستوى الجمهورية.</li>
+                        <li style="margin-bottom: 10px;">تسليم عدة مصانع جديدة بالكامل من مرحلة التأسيس وحتى الجاهزية الكاملة للإنتاج.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Job 2 -->
+            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
+                <div class="card" style="padding: 30px; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
+                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">مدير القسم الكهربائي</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">يناير 2018 - أبريل 2023</span>
+                    </div>
+                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">العبد للأغذية، القاهرة، مصر</h4>
+                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
+                        <li style="margin-bottom: 10px;">تصميم وبناء وتشغيل أنظمة تحكم PLC و HMI و SCADA متكاملة لخطوط الإنتاج والتصنيع.</li>
+                        <li style="margin-bottom: 10px;">إدارة وصيانة جميع البنى التحتية لتوزيع الطاقة في المصنع بما في ذلك لوحات الـ MCC والمحولات.</li>
+                        <li style="margin-bottom: 10px;">الممثل الفني الوحيد للمالك في جميع مشاريع تطوير الفروع الجديدة وعقود التنفيذ.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Job 3 -->
+            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
+                <div class="card" style="padding: 30px; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
+                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">مهندس صيانة</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">أكتوبر 2015 - ديسمبر 2017</span>
+                    </div>
+                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">العبد للأغذية / مصنع عصائر فرج الله</h4>
+                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
+                        <li style="margin-bottom: 10px;">تنفيذ وإدارة خطة صيانة المعدات على مستوى المصنع لضمان الالتزام بأهداف الإنتاج.</li>
+                        <li style="margin-bottom: 10px;">تشغيل الآلات المركبة حديثاً وتقديم تدريب عملي لموظفي التشغيل.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="fade-in-section">
+        <h2 class="section-title">التعليم</h2>
+        <div class="card" style="padding: 40px; text-align: center; margin: 0 20px;">
+            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 15px;">Bachelor of Science (BSc) in الهندسة الكهربائية</h3>
+            <h4 style="margin-bottom: 20px; font-size: 1.2rem; color: #f8fafc;">جامعة الإسكندرية، كلية الهندسة (2013)</h4>
+            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 10px;">تخرجت بتقدير <strong>جيد جداً مع مرتبة الشرف</strong> | قسم القوى والتحكم</p>
+            <p style="color: #cbd5e1; font-size: 1.1rem;">مشروع التخرج: <em>أنظمة الطاقة الكهروضوئية المدمجة في المباني (BIPV)</em> &mdash; بتقدير ممتاز.</p>
+        </div>
+    </section>
+    
 
     <section id="skills" class="fade-in-section">
-        <h2 class="section-title">الكفاءات الأساسية</h2>
+        <h2 class="section-title">المهارات الأساسية</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>⚙️ الأتمتة الصناعية</h3>
@@ -485,1680 +407,20 @@
                 <p>Power Distribution, Circuit Design, Control Systems.</p>
             </div>
             <div class="skill-card">
-                <h3>🤖 التقنيات الناشئة</h3>
+                <h3>🤖 التكنولوجيا الناشئة</h3>
                 <p>Embedded Machine Learning, Edge AI, Data Analysis.</p>
             </div>
             <div class="skill-card">
-                <h3>🗣️ القيادة والإدارة</h3>
+                <h3>🗣️ القيادة</h3>
                 <p>Strategic Planning, Critical Thinking, Public Speaking, Team Communication.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="certificates" class="fade-in-section">
-        <h2 class="section-title">سجل إنجازات الشهادات</h2>
-        <p style="text-align:center; color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">
-            سجل زمني احترافي موثق لأكثر من 50 دورة مهنية من مؤسسات عالمية.
-        </p>
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">الكل</button>
-            <button class="filter-btn" data-filter="project-management">إدارة المشاريع</button>
-            <button class="filter-btn" data-filter="operational-excellence">Six Sigma</button>
-            <button class="filter-btn" data-filter="industrial-automation">PLC & Automation</button>
-            <button class="filter-btn" data-filter="electrical-systems">كهرباء</button>
-            <button class="filter-btn" data-filter="professional-development">تطوير مهني</button>
-        </div>
-        <div class="timeline">
-            
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">6/1/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/84a5cb278ad7b6fd70683f99b3add2c69bda65d3d44008280fdae70124323473/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">Input Sensors with PLC: Sinking and Sourcing</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Input Sensors with PLC: Sinking and Sourcing</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">5/26/2023</span>
-                        <span class="category-badge" style="color: #0ea5e9; background-color: #0ea5e91a; border-color: #0ea5e933;">Professional Development</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/speaking-confidently-and-effectively" target="_blank" class="cert-link" style="background-color: #0ea5e9;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #0ea5e9; padding-left: 10px;">Speaking Confidently and Effectively</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Pete Mockaitis</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Speaking Confidently and Effectively</div>
-                    <div class="css-cert-instructor">Pete Mockaitis</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">5/22/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/0f84ac905d6736e6ace1a450210f4c4c5ae7667e0fc172866b2af5ec743033a6/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">PLC: Industrial Sensors</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">PLC: Industrial Sensors</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">5/18/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/12653c26bca89a419f72d2779e4c4cd2d829ff0e3d921ba819f4d6da76a206df/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">Become a PLC Developer</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Become a PLC Developer</div>
-                    <div class="css-cert-instructor">LinkedIn Learning</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">5/18/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/bd067cdd8a551fe28cfc6958db246154edb47ecf3b1ffe82347865765382a2d6/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">PLC Simulation Software: Factory I/O with Connected Component Workbench</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">PLC Simulation Software: Factory I/O with Connected Component Workbench</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">4/24/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/77049a46e623660f1cade0341b7d76b9b0db964c0ae379cd275ea3df073b9524/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">PLC Sequencer Logic</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">PLC Sequencer Logic</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">4/23/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/a10b129b8a035416ba30b47ac8b522a4a0d490f851cd41cf3ca87d6d27d2a861/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">PLC Program Flow and Control Instructions</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">PLC Program Flow and Control Instructions</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">4/23/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/83a25abba2f4f19ed780fa2ca41d0807ddbb7fc12e468ec126155fe0085aed84/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">PLC Memory Organization</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">PLC Memory Organization</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">4/23/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/cc255e68106f305db7cf73a46a9aa9ffa36f562ad5b6d716190b1c8c780b38b6/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">Learning PLC Ladder Logic: 2 Diving Deeper</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Learning PLC Ladder Logic: 2 Diving Deeper</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/11/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/paths/getting-started-as-an-agile-project-manager" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Getting Started as an Agile Project Manager</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Getting Started as an Agile Project Manager</div>
-                    <div class="css-cert-instructor">LinkedIn Learning</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/11/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/agile-at-work-planning-with-agile-user-stories-2015" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile at Work: Planning with Agile User Stories (2015)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile at Work: Planning with Agile User Stories (2015)</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/11/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/agile-at-work-building-your-agile-team-2015" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile at Work: Building Your Agile Team (2015)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile at Work: Building Your Agile Team (2015)</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/11/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/a2a078d9d9383c7b2ee677f994ec81d85f6098fbd4a5a76f38832f95bd9f27bf/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Transitioning from Waterfall to Agile إدارة المشاريع</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Kelley O'Connell</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Transitioning from Waterfall to Agile إدارة المشاريع</div>
-                    <div class="css-cert-instructor">Kelley O'Connell</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/93e412151dd342827295eb2680cebf6672e77d30f38efa9eafb9de6483e74819/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Managing Project Stakeholders</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Natasha Kasimtseva</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Managing Project Stakeholders</div>
-                    <div class="css-cert-instructor">Natasha Kasimtseva</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/6828e790307f86cce6f63c7a3c10b4f066914a4c0b1585bdc3cec402c24ac5d7/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile at Work: Reporting with Agile Charts and Boards</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile at Work: Reporting with Agile Charts and Boards</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/f56cf9cf9ea71ac647b09998f735c8df2006ca3307de45e977ab711c12aeff32/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile at Work: Getting Better with Agile Retrospectives</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile at Work: Getting Better with Agile Retrospectives</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/agile-at-work-driving-productive-agile-meetings-2015" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile at Work: Driving Productive Agile Meetings (2015)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile at Work: Driving Productive Agile Meetings (2015)</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/agile-project-management-comparing-agile-tools-2021" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile إدارة المشاريع: Comparing Agile Tools (2021)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile إدارة المشاريع: Comparing Agile Tools (2021)</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/agile-project-management-with-microsoft-project-2021" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile إدارة المشاريع with Microsoft Project (2021)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bonnie Biafore</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile إدارة المشاريع with Microsoft Project (2021)</div>
-                    <div class="css-cert-instructor">Bonnie Biafore</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/11c0f08d1e599845efe216e8ceaddf078dfef4a6eb4e0a8e42c66fd0991e4c34/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Teams</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Daniel Stanton</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Teams</div>
-                    <div class="css-cert-instructor">Daniel Stanton</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/405be24f788074de662b7ee016e13e506233be9f8128336b3cf78c6a2b2f39eb/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Risk</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bob McGannon</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Risk</div>
-                    <div class="css-cert-instructor">Bob McGannon</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/6fac3c3061d190c286e26c75d782feb13863a0c711b2f57dd0871144876e4551/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Agile Foundations</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Agile Foundations</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/paths/getting-started-as-a-project-manager" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Getting Started as a Project Manager</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Getting Started as a Project Manager</div>
-                    <div class="css-cert-instructor">LinkedIn Learning</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/f5934b5b0b905556269a08287b5ff038ea811832d0df0f932364d981e57a3cb3/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Communication</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Doug Rose</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Communication</div>
-                    <div class="css-cert-instructor">Doug Rose</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/23d4bb88b548203a84304d5d64c30a397c78562b820248a2d489be1642a70c45/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Microsoft Project Quick Tips</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bonnie Biafore</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Microsoft Project Quick Tips</div>
-                    <div class="css-cert-instructor">Bonnie Biafore</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/project-management-foundations-budgets-2018" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Budgets (2018)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bob McGannon</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Budgets (2018)</div>
-                    <div class="css-cert-instructor">Bob McGannon</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/10/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/855b89b1a237b5e3505e316c52b1c9a42781ebd6ac84392f0a43a1e0302a2c7e/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Schedules</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bonnie Biafore</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Schedules</div>
-                    <div class="css-cert-instructor">Bonnie Biafore</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/paths/become-a-six-sigma-green-belt" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Become a Six Sigma Green Belt</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Become a Six Sigma Green Belt</div>
-                    <div class="css-cert-instructor">LinkedIn Learning</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/1ee0912cabbe413db50987a99f31af0e7721dc607364cfb3155f6a34d042473e/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">How to Manage Lean Six Sigma Projects: Part I</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">How to Manage Lean Six Sigma Projects: Part I</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/learning-minitab-2021" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Learning Minitab (2021)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Learning Minitab (2021)</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/project-management-foundations-ethics-2019" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Ethics (2019)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bob McGannon</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Ethics (2019)</div>
-                    <div class="css-cert-instructor">Bob McGannon</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/31f38a7ff6b79fc44fccb167072ad51a911e64e1b29af7f486c26db60898f6dd/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations (2019)</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Bonnie Biafore</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations (2019)</div>
-                    <div class="css-cert-instructor">Bonnie Biafore</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/2433d8d30a14ef9bc5a1ec53a46ac9eec683c8faf1dab05dc718deca8840597e/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Foundations: Requirements</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Daniel Stanton</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Foundations: Requirements</div>
-                    <div class="css-cert-instructor">Daniel Stanton</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/320a03a54ccddb3f8569482eb73f9d74fde6d04b3cf71e62235b4bb81258d35a/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">How to Manage Lean Six Sigma Projects: Part II</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">How to Manage Lean Six Sigma Projects: Part II</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/4c41682ee826f873003b63962a3c6bd6d5e8152fe4e813e06325a301a977b845/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Six Sigma: Green Belt</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Six Sigma: Green Belt</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/9/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/d82042a525f129e7ffe90eef1dcc96992e8c7cc724e1b13d066043bd6c3d07ca/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Statistics Foundations 4: Advanced Topics</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Eddie Davila</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Statistics Foundations 4: Advanced Topics</div>
-                    <div class="css-cert-instructor">Eddie Davila</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/8/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/f32f20acafa2daa583110201ea0e3281a7adcadb54a7b50ddec240b74d5a0c3d/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Statistics Foundations 3: Using Data Sets</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Eddie Davila</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Statistics Foundations 3: Using Data Sets</div>
-                    <div class="css-cert-instructor">Eddie Davila</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/7/2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/4911f442aac44bb4e924f20bdbca31f6e2b3d6082b8c765c971e99c4fc2082ea/" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">إدارة المشاريع Skills for Leaders</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Dana Brownlee</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">إدارة المشاريع Skills for Leaders</div>
-                    <div class="css-cert-instructor">Dana Brownlee</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/7/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/2ec70371a3386d6cd6fb74abdc95599d1ee77b22015b58119ee8d8339250abc1/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">التميز التشغيلي Foundations</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">التميز التشغيلي Foundations</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/7/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/6455a4f958136143a7093a26a0bcd05d76978d313b1a141a8eb1636445f94637/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Root Cause Analysis: Getting to the Root of Business Problems</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Sam Yankelevitch</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Root Cause Analysis: Getting to the Root of Business Problems</div>
-                    <div class="css-cert-instructor">Sam Yankelevitch</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/7/2023</span>
-                        <span class="category-badge" style="color: #0ea5e9; background-color: #0ea5e91a; border-color: #0ea5e933;">Professional Development</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/7a723260c7e1825e6dbfa218779912fdb20776ab17ca7c3329c5952a88df8229/" target="_blank" class="cert-link" style="background-color: #0ea5e9;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #0ea5e9; padding-left: 10px;">Change Management Foundations</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Scott Mautz</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Change Management Foundations</div>
-                    <div class="css-cert-instructor">Scott Mautz</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/7/2023</span>
-                        <span class="category-badge" style="color: #0ea5e9; background-color: #0ea5e91a; border-color: #0ea5e933;">Professional Development</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/prevent-team-burnout-as-a-manager" target="_blank" class="cert-link" style="background-color: #0ea5e9;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #0ea5e9; padding-left: 10px;">Prevent Team Burnout as a Manager</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Jennifer Moss</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Prevent Team Burnout as a Manager</div>
-                    <div class="css-cert-instructor">Jennifer Moss</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/6/2023</span>
-                        <span class="category-badge" style="color: #0ea5e9; background-color: #0ea5e91a; border-color: #0ea5e933;">Professional Development</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/181da849724ef8b72a94dd76f97a0625385b348f684af9927658fa4e356bf1a9/" target="_blank" class="cert-link" style="background-color: #0ea5e9;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #0ea5e9; padding-left: 10px;">Strategic Focus for Managers</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Mike Figliuolo</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Strategic Focus for Managers</div>
-                    <div class="css-cert-instructor">Mike Figliuolo</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/6/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/70586fc1d8e1246cc8b10c1823156726bf36710c87c446aecf543cca9e9b026d/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">Six Sigma Foundations</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Richard Chua</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Six Sigma Foundations</div>
-                    <div class="css-cert-instructor">Richard Chua</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/5/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/527dc52c9e5137ee3c73739df8af99cac10c6ccb00e54958a2410f72ff44aa79/" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">Learning الأتمتة الصناعية</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Learning الأتمتة الصناعية</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/5/2023</span>
-                        <span class="category-badge" style="color: #f59e0b; background-color: #f59e0b1a; border-color: #f59e0b33;">التميز التشغيلي & Six Sigma</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/ba55486eb24c24208621e528763848cd3d039d336ec7368e44e106c4c1c43cfb/" target="_blank" class="cert-link" style="background-color: #f59e0b;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #f59e0b; padding-left: 10px;">One-Minute Habits for Success</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Scott Mautz</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">One-Minute Habits for Success</div>
-                    <div class="css-cert-instructor">Scott Mautz</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/5/2023</span>
-                        <span class="category-badge" style="color: #10b981; background-color: #10b9811a; border-color: #10b98133;">الأتمتة الصناعية & PLC</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/learning-plc-ladder-logic-1-the-basics" target="_blank" class="cert-link" style="background-color: #10b981;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #10b981; padding-left: 10px;">Learning PLC Ladder Logic: 1 The Basics</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Zahraa Khalil</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Learning PLC Ladder Logic: 1 The Basics</div>
-                    <div class="css-cert-instructor">Zahraa Khalil</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="electrical-systems" style="--card-color: #ef4444;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/5/2023</span>
-                        <span class="category-badge" style="color: #ef4444; background-color: #ef44441a; border-color: #ef444433;">Electrical Systems</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/ef16bdbf68d3d8d8a24330e1de8cc97ce0c16a856e3133d535ad9b475aeba750/" target="_blank" class="cert-link" style="background-color: #ef4444;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #ef4444; padding-left: 10px;">Electrical Systems: Panel Boards, Frequency Drives, and Transformers</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Christopher Randall</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Electrical Systems: Panel Boards, Frequency Drives, and Transformers</div>
-                    <div class="css-cert-instructor">Christopher Randall</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="electrical-systems" style="--card-color: #ef4444;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">1/5/2023</span>
-                        <span class="category-badge" style="color: #ef4444; background-color: #ef44441a; border-color: #ef444433;">Electrical Systems</span>
-                    </div>
-                    <div class="tags-container">
-                        
-                        <a href="https://www.linkedin.com/learning/certificates/f73df1f9051294833fbe18bcb3e557d8d597189338d37aee961112253b014536/" target="_blank" class="cert-link" style="background-color: #ef4444;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #ef4444; padding-left: 10px;">Electrical Systems: Reading Drawings and Schematics</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="provider-icon" alt="icon" loading="lazy">
-                    LinkedIn Learning
-                </p>
-                <div class="course-details"><span class="detail-item">👤 بواسطة: Christopher Randall</span></div>
-                <div class="cert-preview">
-                    
-                <div class="css-certificate">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="css-cert-logo" alt="LinkedIn Learning Logo" loading="lazy">
-                    <div class="css-cert-ribbon">مكتمل</div>
-                    <div class="css-cert-subtitle">شهادة إتمام</div>
-                    <div class="css-cert-title" dir="ltr">Electrical Systems: Reading Drawings and Schematics</div>
-                    <div class="css-cert-instructor">Christopher Randall</div>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <div class="header-left">
-                        <span class="date">2023</span>
-                        <span class="category-badge" style="color: #8b5cf6; background-color: #8b5cf61a; border-color: #8b5cf633;">إدارة المشاريع & Agile</span>
-                    </div>
-                    <div class="tags-container">
-                        <span class="badge id-badge" title="Credential ID">🔑 QDEVQFQCQU4S</span>
-                        <a href="https://coursera.org/verify/QDEVQFQCQU4S" target="_blank" class="cert-link" style="background-color: #8b5cf6;">🔗 عرض الشهادة</a>
-                    </div>
-                </div>
-                <h3 class="title" style="border-left: 4px solid #8b5cf6; padding-left: 10px;">Google إدارة المشاريع Professional Certificate</h3>
-                <p class="provider">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="provider-icon" alt="icon" loading="lazy">
-                    Coursera (Google)
-                </p>
-                <div class="course-details"><span class="detail-item">⏱️ المدة: Professional Certificate (6 Courses)</span><span class="detail-item">👤 بواسطة: Google</span></div>
-                <div class="cert-preview">
-                    <img src="https://coursera-certificate-images.s3.amazonaws.com/QDEVQFQCQU4S" class="cert-image" alt="Google إدارة المشاريع Professional Certificate Certificate" onclick="openModal(this.src)" loading="lazy">
-                </div>
-            </div>
-        </div>
-        
         </div>
     </section>
 
     <section id="contact" class="fade-in-section">
         <h2 class="section-title">تواصل معي</h2>
         <div class="contact-box">
-            <h3>لنصنع شيئاً عظيماً معاً.</h3>
+            <h3>لنبنِ شيئاً عظيماً معاً.</h3>
             <p>أنا دائماً منفتح لمناقشة المشاريع الجديدة والأفكار الإبداعية.</p>
             
             <div style="margin-bottom: 30px; font-size: 1.1rem; color: #e2e8f0;">
@@ -2167,8 +429,8 @@
             </div>
 
             <div class="hero-btns">
-                <a href="https://linkedin.com/in/yahya-tarek" target="_blank" class="btn btn-primary">تواصل على لينكدإن</a>
-                <a href="https://wa.me/201099246336" target="_blank" class="btn btn-secondary">مراسلة عبر واتساب</a>
+                <a href="https://linkedin.com/in/yahya-tarek" target="_blank" class="btn btn-primary">تواصل عبر لينكد إن</a>
+                <a href="https://wa.me/201099246336" target="_blank" class="btn btn-secondary">تحدث عبر واتساب</a>
             </div>
         </div>
     </section>
@@ -2180,7 +442,7 @@
             <a href="mailto:y_tarek91@yahoo.com" title="Email" aria-label="إرسال بريد إلكتروني">📧</a>
             <a href="CV.html" target="_blank" title="Download CV" aria-label="تنزيل السيرة الذاتية">📄</a>
         </div>
-        <p>&copy; 2026 Yahya Tarek Farag. صُنع بشغف وإتقان.</p>
+        <p>&copy; 2026 Yahya Tarek Farag. صُنع بشغف ودقة.</p>
     </footer>
 
     <!-- Back to Top -->
@@ -2232,7 +494,7 @@
 
         // Intersection Observer for scroll animations
         document.addEventListener("DOMContentLoaded", function() {
-            // Dynamic نبذة عني
+            // Dynamic نبذة عني Me
             const aboutTexts = [
                 "أنا <strong>أخصائي أتمتة صناعية</strong> شغوف بخبرة واسعة في برمجة أنظمة الـ PLC، أنظمة SCADA، والتعلم الآلي المدمج. أعمل على تحسين عمليات التصنيع، دمج المستشعرات الذكية، وترقية أنظمة التحكم القديمة إلى معايير الصناعة 4.0 الحديثة.",
                 "As a certified <strong>Agile Project Manager</strong>, I excel at bridging the gap between technical engineering teams and business stakeholders. Armed with Six Sigma methodologies and Scrum frameworks, I lead cross-functional teams to deliver complex projects on time, within budget, and with zero defects.",
@@ -2292,15 +554,17 @@
         // Particle Generator
         (function() {
             const container = document.getElementById('particles');
-            for (let i = 0; i < 40; i++) {
-                const span = document.createElement('span');
-                span.style.left = Math.random() * 100 + '%';
-                span.style.top = Math.random() * 100 + '%';
-                span.style.width = (Math.random() * 3 + 1) + 'px';
-                span.style.height = span.style.width;
-                span.style.animationDuration = (Math.random() * 15 + 10) + 's';
-                span.style.animationDelay = (Math.random() * 10) + 's';
-                container.appendChild(span);
+            if(container) {
+                for (let i = 0; i < 40; i++) {
+                    const span = document.createElement('span');
+                    span.style.left = Math.random() * 100 + '%';
+                    span.style.top = Math.random() * 100 + '%';
+                    span.style.width = (Math.random() * 3 + 1) + 'px';
+                    span.style.height = span.style.width;
+                    span.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                    span.style.animationDelay = (Math.random() * 10) + 's';
+                    container.appendChild(span);
+                }
             }
         })();
 
@@ -2333,9 +597,11 @@
                 backToTop.classList.remove('visible');
             }
         });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        if(backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>

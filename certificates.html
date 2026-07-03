@@ -270,168 +270,28 @@
         <a href="index.html" class="logo">Y. Farag</a>
         <button class="menu-toggle" id="mobile-menu-btn">☰</button>
         <div class="nav-links" id="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="certificates.html">Certificates</a>
-            <a href="#contact">Contact</a>
-            <a href="index-ar.html" class="lang-toggle">🌐 عربي</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="certificates-ar.html" class="lang-toggle">🌐 عربي</a>
         </div>
     </nav>
-
-    <header class="hero">
-        <div class="profile-wrapper">
-            <img src="{profile_photo_path}" alt="Yahya Tarek Farag" class="profile-img" fetchpriority="high">
-        </div>
-        <h1>Yahya Tarek Farag</h1>
-        <p>Engineering Executive | General Manager of Engineering | Automation Specialist<br>Bridging the gap between industrial automation and modern engineering management.</p>
-        <div class="hero-btns">
-            <a href="CV.html" target="_blank" class="btn btn-primary">📄 Download CV</a>
-            <a href="certificates.html" class="btn btn-secondary">View 55+ Certificates</a>
-        </div>
+    
+    <header class="hero" style="padding-top: 120px; padding-bottom: 40px;">
+        <h1>My Certificates Vault</h1>
+        <p>A verified timeline of over {num_certs} professional certifications from world-class institutions.</p>
     </header>
 
-    <!-- Stats Counter -->
-    <section class="stats-section fade-in-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" data-target="{num_certs}">0</div>
-                <div class="stat-label">Verified Certifications</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="13">0</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="6">0</div>
-                <div class="stat-label">Specializations</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="10">0</div>
-                <div class="stat-label">Brands Worked With</div>
-            </div>
+    <section id="certificates" class="fade-in-section" style="padding-top: 20px;">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="project-management">Project Management</button>
+            <button class="filter-btn" data-filter="operational-excellence">Six Sigma</button>
+            <button class="filter-btn" data-filter="industrial-automation">PLC & Automation</button>
+            <button class="filter-btn" data-filter="electrical-systems">Electrical</button>
+            <button class="filter-btn" data-filter="professional-development">Professional Dev</button>
         </div>
-    </section>
-
-    {marquee_html}
-
-    <section id="about" class="fade-in-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="contact-box" style="text-align: left; min-height: 160px; position: relative;">
-            <p id="dynamic-about" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; transition: opacity 0.5s ease-in-out;">
-                I am a passionate <strong>Industrial Automation Specialist</strong> with extensive experience in PLC programming, SCADA systems, and embedded machine learning. I thrive on optimizing manufacturing processes, integrating smart sensors, and upgrading legacy control systems to modern Industry 4.0 standards.
-            </p>
-        </div>
-    </section>
-
-    
-    <section id="experience" class="fade-in-section">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline" style="margin-top: 40px; padding: 0 20px;">
-            <!-- Job 1 -->
-            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
-                <div class="card" style="padding: 30px; text-align: left;">
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
-                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">General Manager of Engineering</h3>
-                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">Jul 2023 - Present</span>
-                    </div>
-                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">B.Laban Engineering, Cairo, Egypt</h4>
-                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
-                        <li style="margin-bottom: 10px;">Reduced the group's monthly engineering and maintenance operating budget by over one-third through comprehensive process redesign and strategic vendor consolidation.</li>
-                        <li style="margin-bottom: 10px;">Conceived, designed, and deployed a fully custom CMMS from the ground up with no prior digital infrastructure in place.</li>
-                        <li style="margin-bottom: 10px;">Delivered multiple greenfield manufacturing plants from bare shell to full production readiness.</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Job 2 -->
-            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
-                <div class="card" style="padding: 30px; text-align: left;">
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
-                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">Electrical Department Manager</h3>
-                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">Jan 2018 - Apr 2023</span>
-                    </div>
-                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">El Abd Foods, Cairo, Egypt</h4>
-                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
-                        <li style="margin-bottom: 10px;">Designed, built, and commissioned complete PLC, HMI, and SCADA control systems for manufacturing production lines.</li>
-                        <li style="margin-bottom: 10px;">Managed and maintained all factory power distribution infrastructure including MCCs, switchgear, and transformers.</li>
-                        <li style="margin-bottom: 10px;">Acted as the Owner's sole technical representative on every new branch development and execution contract.</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Job 3 -->
-            <div class="timeline-item" style="width: 100%; transform: none; margin-bottom: 30px;">
-                <div class="card" style="padding: 30px; text-align: left;">
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; margin-bottom: 15px;">
-                        <h3 style="color: var(--accent); font-size: 1.4rem; margin: 0;">Maintenance Engineer</h3>
-                        <span style="color: var(--text-muted); font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">Oct 2015 - Dec 2017</span>
-                    </div>
-                    <h4 style="margin: 0 0 20px 0; font-size: 1.1rem; color: #f8fafc;">El Abd Foods / Faragello Juices Factory</h4>
-                    <ul style="color: #cbd5e1; line-height: 1.8; margin-left: 20px; font-size: 1rem;">
-                        <li style="margin-bottom: 10px;">Implemented and managed the factory-wide equipment maintenance plan ensuring adherence to production targets.</li>
-                        <li style="margin-bottom: 10px;">Commissioned newly installed machinery and delivered hands-on training to operations personnel.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="education" class="fade-in-section">
-        <h2 class="section-title">Education</h2>
-        <div class="card" style="padding: 40px; text-align: center; margin: 0 20px;">
-            <h3 style="color: var(--accent); font-size: 1.6rem; margin-bottom: 15px;">Bachelor of Science (BSc) in Electrical Engineering</h3>
-            <h4 style="margin-bottom: 20px; font-size: 1.2rem; color: #f8fafc;">Alexandria University, Faculty of Engineering (2013)</h4>
-            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 10px;">Graduated with <strong>Very Good Honours</strong> | Power and Control Department</p>
-            <p style="color: #cbd5e1; font-size: 1.1rem;">Graduation Project: <em>Building-Integrated Photovoltaic Systems (BIPV)</em> &mdash; Awarded Excellent Distinction.</p>
-        </div>
-    </section>
-    
-
-    <section id="skills" class="fade-in-section">
-        <h2 class="section-title">Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>⚙️ Industrial Automation</h3>
-                <p>PLC Programming, Sensors, Connected Components Workbench, Factory I/O.</p>
-            </div>
-            <div class="skill-card">
-                <h3>📊 Project Management</h3>
-                <p>Agile, Scrum, Waterfall, Google Project Management frameworks.</p>
-            </div>
-            <div class="skill-card">
-                <h3>📈 Operational Excellence</h3>
-                <p>Six Sigma, Root Cause Analysis, Process Improvement, Minitab.</p>
-            </div>
-            <div class="skill-card">
-                <h3>⚡ Electrical Engineering</h3>
-                <p>Power Distribution, Circuit Design, Control Systems.</p>
-            </div>
-            <div class="skill-card">
-                <h3>🤖 Emerging Tech</h3>
-                <p>Embedded Machine Learning, Edge AI, Data Analysis.</p>
-            </div>
-            <div class="skill-card">
-                <h3>🗣️ Leadership</h3>
-                <p>Strategic Planning, Critical Thinking, Public Speaking, Team Communication.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="fade-in-section">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-box">
-            <h3>Let's build something great together.</h3>
-            <p>I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-            
-            <div style="margin-bottom: 30px; font-size: 1.1rem; color: #e2e8f0;">
-                <p style="margin-bottom: 10px;">📧 <strong>Email:</strong> <a href="mailto:y_tarek91@yahoo.com" style="color: var(--accent); text-decoration: none;">y_tarek91@yahoo.com</a></p>
-                <p>📱 <strong>WhatsApp/Phone:</strong> <a href="https://wa.me/201099246336" target="_blank" style="color: var(--accent); text-decoration: none;">(+20) 01099246336</a></p>
-            </div>
-
-            <div class="hero-btns">
-                <a href="https://linkedin.com/in/yahya-tarek" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
-                <a href="https://wa.me/201099246336" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
-            </div>
+        <div class="timeline">
+            {cards_html}
         </div>
     </section>
 
