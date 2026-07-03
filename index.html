@@ -831,7 +831,20 @@
                 }
             }
 
-            // ... existing JS logic ...
+            document.getElementById('pause-slide').addEventListener('click', () => {
+                isPaused = !isPaused;
+                document.getElementById('pause-slide').innerHTML = isPaused ? '<i class="fa-solid fa-play"></i>' : '<i class="fa-solid fa-pause"></i>';
+            });
+            
+            document.getElementById('next-slide').addEventListener('click', () => {
+                nextSlide();
+            });
+            
+            document.getElementById('prev-slide').addEventListener('click', () => {
+                prevSlide();
+            });
+            
+            progressInterval = setInterval(updateProgress, UPDATE_FREQ);
         });
     </script>
     
