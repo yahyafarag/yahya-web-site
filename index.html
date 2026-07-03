@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
     <meta name="description" content="Portfolio of Yahya Tarek Farag - Electrical Engineer, Automation & PLC Specialist, and Agile Project Manager.">
     <meta property="og:title" content="Yahya Tarek Farag | Professional Portfolio">
     <meta property="og:description" content="Explore my verified certifications, field experience, and professional background.">
@@ -40,6 +39,21 @@
             overflow-x: hidden;
         }
 
+        /* Particle Stars Background */
+        .particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;
+        }
+        .particles span {
+            position: absolute; display: block; width: 3px; height: 3px; background: rgba(255,255,255,0.3); border-radius: 50%;
+            animation: drift linear infinite;
+        }
+        @keyframes drift {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+        }
+
         /* Navbar */
         nav {
             position: fixed;
@@ -59,11 +73,15 @@
         .nav-links a:hover { color: var(--text-main); }
         .menu-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; background: none; border: none; }
 
+        .lang-toggle { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+        .lang-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
         /* Hero Section */
         .hero { 
+            min-height: 100vh;
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             text-align: center; padding: 120px 20px 80px; position: relative; z-index: 1;
-            background: radial-gradient(circle at center, rgba(30,41,59,0.5) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 30%, rgba(59,130,246,0.12) 0%, transparent 50%);
         }
         .profile-wrapper {
             position: relative;
@@ -238,20 +256,45 @@
         .cert-image { width: 100%; max-height: 350px; object-fit: contain; }
         
         .css-certificate {
-            width: 100%; height: 220px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 8px solid var(--card-color);
+            width: 100%; min-height: 220px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, rgba(59,130,246,0.15) 100%);
+            border: 2px solid rgba(255,255,255,0.1);
             position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 20px; text-align: center;
+            padding: 30px 20px; text-align: center; overflow: hidden;
+            box-shadow: inset 0 0 60px rgba(59,130,246,0.05);
         }
-        .css-cert-logo { width: 40px; position: absolute; top: 15px; left: 15px; filter: invert(1); opacity: 0.5; }
+        .css-certificate::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(59,130,246,0.1), transparent 30%);
+            animation: rotateBorder 8s linear infinite;
+        }
+        @keyframes rotateBorder { 100% { transform: rotate(360deg); } }
+        .css-cert-logo { width: 50px; height: 50px; object-fit: contain; margin-bottom: 12px; filter: drop-shadow(0 0 8px rgba(59,130,246,0.4)); z-index: 2; }
         .css-cert-ribbon {
-            position: absolute; top: 15px; right: -30px;
-            background: var(--card-color); color: white; font-size: 0.65rem; font-weight: bold; padding: 4px 35px; transform: rotate(45deg);
+            position: absolute; top: 12px; right: -35px;
+            background: linear-gradient(135deg, var(--card-color), #10b981); color: white; font-size: 0.6rem; font-weight: bold; padding: 5px 40px; transform: rotate(45deg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: 1px;
         }
-        .css-cert-title { color: #fff; font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading); margin-bottom: 10px; z-index: 2; }
-        .css-cert-subtitle { color: #94a3b8; font-size: 0.75rem; letter-spacing: 1.5px; margin-bottom: 10px; text-transform: uppercase; }
-        .css-cert-instructor { color: #cbd5e1; font-size: 0.85rem; font-family: monospace; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px; width: 70%; z-index: 2; }
+        .css-cert-title { color: #fff; font-size: 1.1rem; font-weight: 800; font-family: var(--font-heading); margin-bottom: 8px; z-index: 2; line-height: 1.3; }
+        .css-cert-subtitle { color: #64748b; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; z-index: 2; }
+        .css-cert-instructor { color: #94a3b8; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; width: 80%; z-index: 2; }
+
+        /* Stats Counter */
+        .stats-section { padding: 60px 20px; background: rgba(0,0,0,0.3); position: relative; z-index: 1; }
+        .stats-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-label { color: var(--text-muted); font-size: 0.95rem; margin-top: 5px; }
+
+        /* Filter Buttons */
+        .filter-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+        .filter-btn { padding: 8px 20px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #e2e8f0; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; font-family: var(--font-main); }
+        .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 15px var(--accent-glow); }
+
+        /* Back to Top */
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 1.5rem; z-index: 99; opacity: 0; transform: translateY(20px); transition: all 0.3s; box-shadow: 0 4px 15px var(--accent-glow); display: flex; align-items: center; justify-content: center; }
+        .back-to-top.visible { opacity: 1; transform: translateY(0); }
+        .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--accent-glow); }
 
         .id-badge { background: rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; border: 1px dashed rgba(255,255,255,0.2); }
         .cert-link { background: var(--card-color); color: white; padding: 6px 15px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: filter 0.3s; display: inline-flex; align-items: center; gap: 5px; }
@@ -265,7 +308,10 @@
         .contact-box h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #fff; }
         .contact-box p { color: var(--text-muted); margin-bottom: 30px; }
         
-        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+        footer { text-align: center; padding: 50px 20px 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; background: rgba(0,0,0,0.2); }
+        .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 1.2rem; transition: color 0.3s, transform 0.3s; display: inline-block; }
+        .footer-links a:hover { color: var(--accent); transform: translateY(-3px); }
 
         /* Modal */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
@@ -300,7 +346,9 @@
             section { padding: 60px 15px; }
             .section-title { font-size: 2rem; margin-bottom: 30px; }
             .contact-box { padding: 25px 15px; }
-            .css-certificate { height: auto; min-height: 200px; padding: 15px; }
+            .css-certificate { min-height: 180px; padding: 15px; }
+            .stats-grid { gap: 30px; }
+            .stat-number { font-size: 2.2rem; }
         }
         @media (max-width: 480px) {
             .masonry-gallery { column-count: 1; }
@@ -314,6 +362,9 @@
 </head>
 <body>
 
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
     <nav>
         <a href="#" class="logo">Y. Farag</a>
         <button class="menu-toggle" id="mobile-menu-btn">☰</button>
@@ -324,6 +375,7 @@
             <a href="#gallery">Gallery</a>
             <a href="#certificates">Certificates</a>
             <a href="#contact">Contact</a>
+            <a href="index-ar.html" class="lang-toggle">🌐 عربي</a>
         </div>
     </nav>
 
@@ -338,6 +390,28 @@
             <a href="#certificates" class="btn btn-secondary">View Portfolio</a>
         </div>
     </header>
+
+    <!-- Stats Counter -->
+    <section class="stats-section fade-in-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-target="53">0</div>
+                <div class="stat-label">Verified Certifications</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="6">0</div>
+                <div class="stat-label">Specializations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Brands Worked With</div>
+            </div>
+        </div>
+    </section>
 
     
         <section id="brands" class="fade-in-section" style="padding: 40px 0; background: rgba(0,0,0,0.2); max-width: 100%;">
@@ -367,7 +441,7 @@
             <h2 class="section-title">Field Experience</h2>
             <p style="text-align:center; color: var(--text-muted); margin-bottom: 40px;">Real-world execution bridging engineering and management.</p>
             <div class="masonry-gallery">
-                <img src="Photos-001/old work/Wh atsApp Image 2023-01-03 at 16.21.26.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp  Image 2023-01-03 at 16.21.26.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp Imag e 2023-01-03 at 16.21.25.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp Image 2023- 01-03 at 16.21.25.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp Image 2023-01-03 at 16.21.24.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp Image 2023-01-03 at 16.21.25.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsAنpp Image 2023-01-03 at 16.21.25.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy">
+                <img src="Photos-001/old work/WhatsApp  Image 2023-01-03 at 16.21.26.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsApp Image 2023-01-03 at 16.21.24.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy"><img src="Photos-001/old work/WhatsAنpp Image 2023-01-03 at 16.21.25.jpg" alt="Field Work" onclick="openModal(this.src)" class="gallery-item" loading="lazy">
             </div>
         </section>
         
@@ -404,12 +478,20 @@
 
     <section id="certificates" class="fade-in-section">
         <h2 class="section-title">Certifications Journey</h2>
-        <p style="text-align:center; color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">
-            A verified timeline of over 50 professional certifications from world-class institutions.
+        <p style="text-align:center; color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">
+            A verified timeline of over 53 professional certifications from world-class institutions.
         </p>
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="project-management">Project Management</button>
+            <button class="filter-btn" data-filter="operational-excellence">Six Sigma</button>
+            <button class="filter-btn" data-filter="industrial-automation">PLC & Automation</button>
+            <button class="filter-btn" data-filter="electrical-systems">Electrical</button>
+            <button class="filter-btn" data-filter="professional-development">Professional Dev</button>
+        </div>
         <div class="timeline">
             
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -442,7 +524,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -475,7 +557,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -508,7 +590,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -541,7 +623,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -574,7 +656,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -607,7 +689,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -640,7 +722,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -673,7 +755,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -706,7 +788,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -739,7 +821,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -772,7 +854,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -805,7 +887,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -838,7 +920,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -871,7 +953,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -904,7 +986,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -937,7 +1019,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -970,7 +1052,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1003,7 +1085,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1036,7 +1118,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1069,7 +1151,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1102,7 +1184,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1135,7 +1217,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1168,7 +1250,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1201,7 +1283,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1234,7 +1316,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1267,7 +1349,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1300,7 +1382,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1333,7 +1415,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1366,7 +1448,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1399,7 +1481,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1432,7 +1514,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1465,7 +1547,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1498,7 +1580,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1531,7 +1613,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1564,7 +1646,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1597,7 +1679,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1630,7 +1712,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1663,7 +1745,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1696,7 +1778,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1729,7 +1811,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1762,7 +1844,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1795,7 +1877,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1828,7 +1910,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1861,7 +1943,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1894,7 +1976,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #f59e0b;">
+        <div class="timeline-item" data-category="operational-excellence-six-sigma" style="--card-color: #f59e0b;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1927,7 +2009,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #10b981;">
+        <div class="timeline-item" data-category="industrial-automation-plc" style="--card-color: #10b981;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1960,7 +2042,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #ef4444;">
+        <div class="timeline-item" data-category="electrical-systems" style="--card-color: #ef4444;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -1993,7 +2075,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #ef4444;">
+        <div class="timeline-item" data-category="electrical-systems" style="--card-color: #ef4444;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -2026,7 +2108,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -2059,7 +2141,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -2092,7 +2174,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #0ea5e9;">
+        <div class="timeline-item" data-category="professional-development" style="--card-color: #0ea5e9;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -2125,7 +2207,7 @@
             </div>
         </div>
         
-        <div class="timeline-item" style="--card-color: #8b5cf6;">
+        <div class="timeline-item" data-category="project-management-agile" style="--card-color: #8b5cf6;">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <div class="timeline-header">
@@ -2172,8 +2254,17 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Yahya Tarek Farag. Built with Vanilla HTML, CSS & JS.</p>
+        <div class="footer-links">
+            <a href="https://linkedin.com/in/yahya-tarek" target="_blank" title="LinkedIn">💼</a>
+            <a href="https://wa.me/201099246336" target="_blank" title="WhatsApp">💬</a>
+            <a href="mailto:y_tarek91@yahoo.com" title="Email">📧</a>
+            <a href="CV.html" target="_blank" title="Download CV">📄</a>
+        </div>
+        <p>&copy; 2026 Yahya Tarek Farag. Crafted with passion & precision.</p>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">↑</button>
 
     <!-- The Modal -->
     <div id="imageModal" class="modal" onclick="closeModal()">
@@ -2232,6 +2323,80 @@
             document.querySelectorAll('.fade-in-section').forEach((section) => {
                 observer.observe(section);
             });
+
+            // Stats Counter Animation
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.stat-number');
+                        counters.forEach(counter => {
+                            const target = +counter.getAttribute('data-target');
+                            const duration = 2000;
+                            const step = target / (duration / 16);
+                            let current = 0;
+                            const timer = setInterval(() => {
+                                current += step;
+                                if (current >= target) {
+                                    counter.textContent = target + '+';
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = Math.floor(current) + '+';
+                                }
+                            }, 16);
+                        });
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.stats-section').forEach(s => counterObserver.observe(s));
+        });
+
+        // Particle Generator
+        (function() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 40; i++) {
+                const span = document.createElement('span');
+                span.style.left = Math.random() * 100 + '%';
+                span.style.top = Math.random() * 100 + '%';
+                span.style.width = (Math.random() * 3 + 1) + 'px';
+                span.style.height = span.style.width;
+                span.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                span.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(span);
+            }
+        })();
+
+        // Certificate Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.timeline-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = '';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateX(-20px)';
+                        setTimeout(() => { item.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
