@@ -192,8 +192,8 @@
         
         .marquee-wrapper { overflow: hidden; white-space: nowrap; width: 100%; }
         .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
-        .marquee-content img { height: 50px; margin: 0 40px; vertical-align: middle; filter: grayscale(100%) brightness(200%); opacity: 0.6; transition: 0.3s ease; }
-        .marquee-content img:hover { filter: none; opacity: 1; }
+        .marquee-content img { height: 70px; margin: 0 40px; vertical-align: middle; filter: drop-shadow(0 4px 10px rgba(255,255,255,0.15)); transition: all 0.3s ease; }
+        .marquee-content img:hover { transform: scale(1.15); filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
         .back-to-top {

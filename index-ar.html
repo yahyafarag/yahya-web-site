@@ -192,8 +192,8 @@
         
         .marquee-wrapper { overflow: hidden; white-space: nowrap; width: 100%; }
         .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
-        .marquee-content img { height: 50px; margin: 0 40px; vertical-align: middle; filter: grayscale(100%) brightness(200%); opacity: 0.6; transition: 0.3s ease; }
-        .marquee-content img:hover { filter: none; opacity: 1; }
+        .marquee-content img { height: 70px; margin: 0 40px; vertical-align: middle; filter: drop-shadow(0 4px 10px rgba(255,255,255,0.15)); transition: all 0.3s ease; }
+        .marquee-content img:hover { transform: scale(1.15); filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
         .back-to-top {
@@ -315,8 +315,8 @@
     </section>
 
     
-        <section id="brands" class="fade-in-section" style="padding: 40px 0; background: rgba(0,0,0,0.2); max-width: 100%;">
-            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 30px;">الخبرة المهنية وشركاء النجاح</h2>
+        <section id="brands" class="fade-in-section" style="padding: 40px 0; background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 100%; position: relative; z-index: 10;">
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 30px; text-shadow: 0 2px 10px rgba(255,255,255,0.2);">الخبرة المهنية وشركاء النجاح</h2>
             <div class="marquee-wrapper">
                 <div class="marquee-content">
                     <img src="company logo/images (1).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (2).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (3).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (4).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (5).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.png" alt="Company Logo" loading="lazy"><img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy"><img src="Elabdfoods.png" alt="Company Logo" loading="lazy"><img src="falcon.png" alt="Company Logo" loading="lazy"><img src="Farag Allah.png" alt="Company Logo" loading="lazy">
@@ -327,7 +327,7 @@
         
 
     <section id="about" class="fade-in-section">
-        <h2 class="section-title">نبذة عني Me</h2>
+        <h2 class="section-title">نبذة عني</h2>
         <div class="contact-box" style="text-align: left; min-height: 160px; position: relative;">
             <p id="dynamic-about" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; transition: opacity 0.5s ease-in-out;">
                 أنا <strong>أخصائي أتمتة صناعية</strong> شغوف بخبرة واسعة في برمجة أنظمة الـ PLC، أنظمة SCADA، والتعلم الآلي المدمج. أعمل على تحسين عمليات التصنيع، دمج المستشعرات الذكية، وترقية أنظمة التحكم القديمة إلى معايير الصناعة 4.0 الحديثة.
@@ -504,7 +504,7 @@
 
         // Intersection Observer for scroll animations
         document.addEventListener("DOMContentLoaded", function() {
-            // Dynamic نبذة عني Me
+            // Dynamic نبذة عني
             const aboutTexts = [
                 "أنا <strong>أخصائي أتمتة صناعية</strong> شغوف بخبرة واسعة في برمجة أنظمة الـ PLC، أنظمة SCADA، والتعلم الآلي المدمج. أعمل على تحسين عمليات التصنيع، دمج المستشعرات الذكية، وترقية أنظمة التحكم القديمة إلى معايير الصناعة 4.0 الحديثة.",
                 "As a certified <strong>Agile Project Manager</strong>, I excel at bridging the gap between technical engineering teams and business stakeholders. Armed with Six Sigma methodologies and Scrum frameworks, I lead cross-functional teams to deliver complex projects on time, within budget, and with zero defects.",
