@@ -44,6 +44,47 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/case-study-fastfood.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/case-study-fastfood-ar.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/case-study-beverage.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/case-study-beverage-ar.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/article-oee.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/article-oee-ar.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/article-tco.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yahyafarag.github.io/yahya-web-site/article-tco-ar.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
 
 
