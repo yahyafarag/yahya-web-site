@@ -19,6 +19,32 @@
   <url><loc>https://yahyafarag.github.io/yahya-web-site/article-cmms-ar.html</loc><priority>0.7</priority></url>
   <url><loc>https://yahyafarag.github.io/yahya-web-site/article-it-ot.html</loc><priority>0.7</priority></url>
   <url><loc>https://yahyafarag.github.io/yahya-web-site/article-it-ot-ar.html</loc><priority>0.7</priority></url>
+
+    <url>
+        <loc>https://yahyafarag.github.io/yahya-web-site/article-lessons.html</loc>
+        <lastmod>2026-07-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://yahyafarag.github.io/yahya-web-site/article-lessons-ar.html</loc>
+        <lastmod>2026-07-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://yahyafarag.github.io/yahya-web-site/case-study-cost.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://yahyafarag.github.io/yahya-web-site/case-study-cost-ar.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
+
 
 
