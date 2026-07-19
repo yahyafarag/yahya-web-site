@@ -152,6 +152,7 @@
         padding: 2rem 4rem;
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
     }
     
     /* Progress Bars */
@@ -731,7 +732,7 @@
             --accent: #00f2fe;
             --text-main: #f8fafc;
         }
-        body {
+        body.cv-page {
             margin: 0; padding: 0;
             background: var(--bg-gradient);
             color: var(--text-main);
@@ -796,7 +797,7 @@
         box-sizing: border-box;
     }
     
-    body {
+    body.error-page {
         background: #0f172a;
         color: var(--text-main);
         min-height: 100vh;
