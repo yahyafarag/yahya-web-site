@@ -4,11 +4,11 @@
     body { font-family: 'Inter', 'Tajawal', sans-serif; }
     
     :root {
-        --bg-gradient: linear-gradient(135deg, #09101f 0%, #0c2446 100%);
+        --bg-gradient: linear-gradient(135deg, #0A192F 0%, #0F2440 100%);
         --glass-bg: rgba(255, 255, 255, 0.05);
-        --glass-border: rgba(0, 242, 254, 0.2);
-        --accent: #00f2fe;
-        --accent-glow: rgba(0, 242, 254, 0.6);
+        --glass-border: rgba(242, 140, 40, 0.3);
+        --accent: #F28C28;
+        --accent-glow: rgba(242, 140, 40, 0.5);
         --text-main: #f8fafc;
         --text-muted: #cbd5e1;
     }
@@ -20,12 +20,12 @@
     }
     
     body {
-        background: #0f172a; /* Fallback for particles */
+        background: #0F2440; /* INJAZ Navy Blue Fallback */
         color: var(--text-main);
         min-height: 100vh;
         margin: 0;
         scrollbar-width: thin;
-        scrollbar-color: var(--accent) #1e293b;
+        scrollbar-color: var(--accent) #0A192F;
     }
     
     *:focus-visible {
@@ -456,7 +456,7 @@
             --bg-card: rgba(30, 41, 59, 0.7);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --accent: #3b82f6;
+            --accent: #F28C28;
             --accent-glow: rgba(59, 130, 246, 0.5);
             --card-border: rgba(255, 255, 255, 0.1);
         }
@@ -680,7 +680,7 @@
 
         :root {
             --bg-gradient: linear-gradient(135deg, #09101f 0%, #0c2446 100%);
-            --accent: #00f2fe;
+            --accent: #F28C28;
             --text-main: #f8fafc;
             --text-muted: #cbd5e1;
         }
@@ -699,7 +699,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            border-bottom: 1px solid rgba(242, 140, 40, 0.2);
         }
     
         .btn {
@@ -714,7 +714,7 @@
         }
     
         .btn:hover {
-            background: rgba(0, 242, 254, 0.2);
+            background: rgba(242, 140, 40, 0.2);
             border-color: var(--accent);
         }
     
@@ -728,7 +728,7 @@
 
         :root {
             --bg-gradient: linear-gradient(135deg, #09101f 0%, #0c2446 100%);
-            --accent: #00f2fe;
+            --accent: #F28C28;
             --text-main: #f8fafc;
         }
         body.cv-page {
@@ -784,8 +784,8 @@
     
     :root {
         --bg-gradient: linear-gradient(135deg, #09101f 0%, #0c2446 100%);
-        --accent: #00f2fe;
-        --accent-glow: rgba(0, 242, 254, 0.6);
+        --accent: #F28C28;
+        --accent-glow: rgba(242, 140, 40, 0.6);
         --text-main: #f8fafc;
         --text-muted: #cbd5e1;
     }
@@ -820,7 +820,7 @@
         padding: 2rem;
         background: rgba(15, 23, 42, 0.75);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(0, 242, 254, 0.2);
+        border: 1px solid rgba(242, 140, 40, 0.2);
         border-radius: 16px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         max-width: 600px;
