@@ -23,8 +23,7 @@
         background: #0f172a; /* Fallback for particles */
         color: var(--text-main);
         min-height: 100vh;
-        display: flex;
-        overflow: hidden;
+        margin: 0;
         scrollbar-width: thin;
         scrollbar-color: var(--accent) #1e293b;
     }
@@ -815,8 +814,7 @@
         z-index: 0;
         background: var(--bg-gradient);
     }
-    
-    .container {
+    .error-page .container {
         z-index: 1;
         position: relative;
         padding: 2rem;
