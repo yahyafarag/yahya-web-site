@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل مع يحيى طارق - خبير معدات المصانع و CMMS</title>
+    <meta name="description" content="تواصل مع المهندس يحيى طارق للاستشارات الهندسية، تطبيقات CMMS، ورفع كفاءة خطوط الإنتاج.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: 40px;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+        .contact-header { text-align: center; margin-bottom: 40px; }
+        .contact-header h1 { color: var(--accent); font-size: 2.5rem; }
+        .contact-header p { color: var(--text-muted); }
+        .form-group { margin-bottom: 20px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--text-color); }
+        .form-control { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-color); font-family: inherit; }
+        .form-control:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.1); }
+        .submit-btn { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 30px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .submit-btn:hover { background: #128c7e; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index-ar.html" class="logo">
+                <span class="logo-text">يحيى <span class="logo-accent">طارق</span></span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links">
+                <a href="index-ar.html">الرئيسية</a>
+                <a href="projects-ar.html">المشاريع</a>
+                <a href="certificates-ar.html">الشهادات</a>
+                <a href="cv-viewer-ar.html">السيرة الذاتية</a>
+                <a href="contact-ar.html" class="active">تواصل</a>
+                <a href="#" class="search-btn-trigger"><i class="fas fa-search"></i></a>
+                <a href="contact.html" class="lang-switch">English <i class="fas fa-globe"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="contact-container fade-in-section">
+        <div class="contact-header">
+            <h1>لنتحدث عن مشروعك القادم</h1>
+            <p>أرسل لي رسالتك مباشرة عبر الواتساب لضمان سرعة الرد والتواصل.</p>
+        </div>
+        <form id="waForm">
+            <div class="form-group">
+                <label for="name">الاسم بالكامل</label>
+                <input type="text" id="name" class="form-control" required placeholder="أحمد محمد">
+            </div>
+            <div class="form-group">
+                <label for="company">اسم الشركة / المصنع</label>
+                <input type="text" id="company" class="form-control" placeholder="المصنع العربي للحديد">
+            </div>
+            <div class="form-group">
+                <label for="interest">مجال الاهتمام</label>
+                <select id="interest" class="form-control">
+                    <option value="تطبيق أنظمة CMMS">تطبيق أنظمة CMMS</option>
+                    <option value="تحسين وتطوير خطوط الإنتاج">تحسين وتطوير خطوط الإنتاج</option>
+                    <option value="مراجعة هندسية">مراجعة هندسية للمعدات</option>
+                    <option value="استشارة عامة">استشارة عامة</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">الرسالة</label>
+                <textarea id="message" class="form-control" rows="5" required placeholder="كيف يمكنني مساعدتك؟"></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> إرسال عبر الواتساب</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('waForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            const waNumber = '201080801708';
+            let waText = `أهلاً مهندس يحيى، معك *${name}*`;
+            if (company) waText += ` من شركة *${company}*`;
+            waText += `.%0A%0A*الاهتمام:* ${interest}%0A%0A*الرسالة:* ${message}`;
+            
+            window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
+        });
+        
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+        // Mobile menu
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Yahya Tarek - Factory Equipment & CMMS Expert</title>
+    <meta name="description" content="Get in touch with Yahya Tarek for engineering audits, CMMS implementation, and factory equipment consultation.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: 40px;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+        .contact-header { text-align: center; margin-bottom: 40px; }
+        .contact-header h1 { color: var(--accent); font-size: 2.5rem; }
+        .contact-header p { color: var(--text-muted); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--text-color); }
+        .form-control { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-color); font-family: inherit; }
+        .form-control:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.1); }
+        .submit-btn { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 30px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .submit-btn:hover { background: #128c7e; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-text">YAHYA <span class="logo-accent">TAREK</span></span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="CV.html">CV</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="#" class="search-btn-trigger"><i class="fas fa-search"></i></a>
+                <a href="contact-ar.html" class="lang-switch">عربي <i class="fas fa-globe"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="contact-container fade-in-section">
+        <div class="contact-header">
+            <h1>Let's Build Something Great</h1>
+            <p>Send me a message directly to my WhatsApp for instant communication.</p>
+        </div>
+        <form id="waForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="company">Company / Factory Name</label>
+                <input type="text" id="company" class="form-control" placeholder="Acme Corp">
+            </div>
+            <div class="form-group">
+                <label for="interest">Area of Interest</label>
+                <select id="interest" class="form-control">
+                    <option value="CMMS Implementation">CMMS Implementation</option>
+                    <option value="Production Line Optimization">Production Line Optimization</option>
+                    <option value="Engineering Audit">Engineering Audit</option>
+                    <option value="Consultation">General Consultation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" rows="5" required placeholder="How can I help you?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('waForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            const waNumber = '201080801708';
+            let waText = `Hello Yahya, my name is *${name}*`;
+            if (company) waText += ` from *${company}*`;
+            waText += `.%0A%0A*Interest:* ${interest}%0A%0A*Message:* ${message}`;
+            
+            window.open(`https://wa.me/${waNumber}?text=${waText}`, '_blank');
+        });
+        
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+        // Mobile menu
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
