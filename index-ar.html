@@ -88,6 +88,71 @@
         .gallery-item:hover { transform: translateY(-5px); border-color: var(--accent); }
         .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
     
+    
+        /* Interactive Scroll Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+        /* Floating WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-widget:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(37,211,102,0.4);
+            color: white;
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            background: #fff;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .whatsapp-widget:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        [dir="rtl"] .whatsapp-widget {
+            right: auto;
+            left: 30px;
+        }
+        [dir="rtl"] .whatsapp-tooltip {
+            right: auto;
+            left: 75px;
+        }
+    
     </style>
 <meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." name="description"/><link href="https://yahyafarag.github.io/yahya-web-site/index-ar.html" rel="canonical"/><link href="https://yahyafarag.github.io/yahya-web-site/index-ar.html" hreflang="ar" rel="alternate"/><link href="https://yahyafarag.github.io/yahya-web-site/index.html" hreflang="en" rel="alternate"/><meta content="website" property="og:type"/><meta content="https://yahyafarag.github.io/yahya-web-site/index-ar.html" property="og:url"/><meta content="إنجاز - لحلول الأداء الهندسي" property="og:title"/><meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." property="og:description"/><meta content="https://yahyafarag.github.io/yahya-web-site/assets/images/profile/yahya-profile.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://yahyafarag.github.io/yahya-web-site/index-ar.html" name="twitter:url"/><meta content="إنجاز - لحلول الأداء الهندسي" name="twitter:title"/><meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." name="twitter:description"/><meta content="https://yahyafarag.github.io/yahya-web-site/assets/images/profile/yahya-profile.jpg" name="twitter:image"/><script type="application/ld+json">
     {
@@ -104,6 +169,7 @@
     }
     </script></head>
 <body>
+    <div id="scroll-progress"></div>
 <div id="particles-js" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; direction:ltr;"></div>
 <nav class="navbar">
 <div class="nav-brand">
@@ -274,5 +340,64 @@
             });
         });
     </script>
+
+    <a href="https://wa.me/201000000000" class="whatsapp-widget" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">تواصل معي</span>
+    </a>
+        
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollPx = document.documentElement.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollPx / winHeightPx) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if(progressBar) {
+                progressBar.style.width = scrolled + '%';
+            }
+        });
+
+        // Number Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const text = counter.innerText;
+                const target = +text.replace(/[^0-9]/g, '');
+                if (target === 0) return;
+                
+                const suffix = text.replace(/[0-9]/g, '');
+                counter.innerText = '0' + suffix;
+                
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/[^0-9]/g, '');
+                    const inc = target / speed;
+                    
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + inc) + suffix;
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = text;
+                    }
+                };
+                
+                // Intersection Observer to trigger when visible
+                const observer = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+        };
+        
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+    
 </body>
 </html>

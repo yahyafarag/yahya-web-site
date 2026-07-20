@@ -38,6 +38,7 @@
             <link rel="stylesheet" href="assets/css/style.css">
 </head>
         <body>
+    <div id="scroll-progress"></div>
         <header>
         <h1>Yahya Tarek Farag - General Manager of Engineering</h1>
         <div class="header-actions">
@@ -71,6 +72,65 @@
         });
     </script>
 
+
+    <a href="https://wa.me/201000000000" class="whatsapp-widget" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with me</span>
+    </a>
+        
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollPx = document.documentElement.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollPx / winHeightPx) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if(progressBar) {
+                progressBar.style.width = scrolled + '%';
+            }
+        });
+
+        // Number Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const text = counter.innerText;
+                const target = +text.replace(/[^0-9]/g, '');
+                if (target === 0) return;
+                
+                const suffix = text.replace(/[0-9]/g, '');
+                counter.innerText = '0' + suffix;
+                
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/[^0-9]/g, '');
+                    const inc = target / speed;
+                    
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + inc) + suffix;
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = text;
+                    }
+                };
+                
+                // Intersection Observer to trigger when visible
+                const observer = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+        };
+        
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+    
 </body>
         </html>
         
